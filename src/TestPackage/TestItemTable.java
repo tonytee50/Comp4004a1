@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import server.logic.model.Fee;
+import server.logic.model.Item;
 import server.logic.tables.ItemTable;
 
 public class TestItemTable {
@@ -35,7 +37,10 @@ public class TestItemTable {
 		assertTrue(itemTable1.lookup("9781442668584"));
 		assertFalse(itemTable1.lookup("1234567891234"));
 		
-		
+		//test getItemTable method
+		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
+		itemTable1.itemList.add(new Item(12,"1234567890123"));
+		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
 	}
 
 }

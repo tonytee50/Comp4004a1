@@ -10,7 +10,7 @@ import server.logic.model.Item;
 
 public class ItemTable {
 
-	List<Item> itemList=new ArrayList<Item>();
+	public List<Item> itemList=new ArrayList<Item>();
     
     public ItemTable(){
     	//set up the default list with some instances
@@ -48,4 +48,8 @@ public class ItemTable {
 		return result;
 	}
     
+	public List<Item> getItemTable() {
+		return itemList;
+	}
+	
 }
