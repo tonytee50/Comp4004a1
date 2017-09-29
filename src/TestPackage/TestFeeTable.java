@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import server.logic.model.Fee;
 import server.logic.tables.FeeTable;
 
 public class TestFeeTable {
@@ -41,6 +42,14 @@ public class TestFeeTable {
 		//test lookup method
 		assertTrue(newFee.lookup(1));
 		assertFalse(newFee.lookup(0));
+		
+		//test lookupFee method
+		assertEquals(5, newFee.lookupfee(0));
+//		Fee otherFee = new Fee(1,6);
+//		newFee.feeList.add(otherFee);
+//		System.out.println(newFee.feeList);
+//		assertEquals(6, newFee.lookupfee(1));
+		
 		
 	}
 	
