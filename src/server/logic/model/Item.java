@@ -14,4 +14,8 @@ public class Item {
 		return "["+this.itemid+","+this.ISBN +"]";
 	}
 	
+	
+	public int getItemid() {
+		return itemid;
+	}
 }
