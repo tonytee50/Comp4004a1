@@ -34,4 +34,9 @@ public class Loan {
 	public String getCopynumber() {
 		return copynumber;
 	}
+	
+	public Date getDate() {
+		return date;
+	}
+
 }
