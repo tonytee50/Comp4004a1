@@ -16,4 +16,8 @@ public class Title {
 	public String getBooktitle() {
 		return booktitle;
 	}
+	public String toString(){
+		return "["+this.ISBN+","+this.booktitle+"]";
+	}
+
 }
