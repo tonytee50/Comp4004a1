@@ -50,11 +50,11 @@ public class TestLoanTable {
 	@Test
 	public void testCheckLoan() {
 		//test checkLoan method
-		Loan loan=new Loan(0,"9781442668584","1",new Date(),"0");
+		Loan loan=new Loan(0,"9781442668585","1",new Date(),"0");
 		loanTable2.loanList.add(loan);
 		assertTrue(loanTable.checkLoan("1234","1"));
 		System.out.println(loanTable.loanList);
-		assertFalse(loanTable2.checkLoan("9781442668584", "1"));
+		assertFalse(loanTable2.checkLoan("9781442668585", "1"));
 	}
 	
 	@Test
@@ -79,5 +79,14 @@ public class TestLoanTable {
 		
 	}
 
+	@Test
+	public void testCheckLoan1() {
+		//test checkLoan method
+		Loan loan=new Loan(0,"9781442668585","1",new Date(),"0");
+		loanTable2.loanList.add(loan);
+		assertTrue(loanTable.checkLoan("1234"));
+		System.out.println(loanTable.loanList);
+		assertFalse(loanTable2.checkLoan("9781442668584"));
+	}
 	
 }
