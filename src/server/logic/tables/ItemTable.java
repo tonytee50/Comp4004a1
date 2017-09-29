@@ -22,4 +22,13 @@ public class ItemTable {
     	//logger.info(String.format("Operation:Initialize ItemTable;ItemTable: %s", itemList));
     };
 
+    
+    private static class ItemListHolder {
+        private static final ItemTable INSTANCE = new ItemTable();
+    }
+    
+    public static final ItemTable getInstance() {
+        return ItemListHolder.INSTANCE;
+    }
+    
 }

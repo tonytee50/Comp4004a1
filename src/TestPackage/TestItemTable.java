@@ -10,12 +10,14 @@ import server.logic.tables.ItemTable;
 
 public class TestItemTable {
 	
-	ItemTable itemTable;
+	ItemTable itemTable1;
+	ItemTable itemTable2;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		itemTable = new ItemTable();
+		itemTable1 = new ItemTable();
+		itemTable2 = new ItemTable();
 	}
 
 	@Test
@@ -23,7 +25,11 @@ public class TestItemTable {
 		
 		//Test constructor
 		assertNotNull(new ItemTable());
-		assertNotNull(itemTable);
+		assertNotNull(itemTable1);
+		
+		//test getInstance function
+		assertEquals(itemTable1.getInstance(), itemTable2.getInstance());
+		assertEquals(ItemTable.getInstance(), ItemTable.getInstance());
 		
 		
 
