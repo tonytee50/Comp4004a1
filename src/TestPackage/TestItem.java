@@ -28,12 +28,15 @@ public class TestItem {
 	public void test() {
 		//test toString method
 		assertEquals("[0,1234567891023]", firstItem.toString());
-		assertEquals("[22,]", secondItem.toString());
-			
-	
+		assertEquals("[22,]", secondItem.toString());	
+		
 		//test getItemID method
 		assertEquals(0, firstItem.getItemid());
 		assertEquals(22, secondItem.getItemid());
+		
+		//test getISBN method
+		assertEquals("1234567891023", firstItem.getISBN());
+		assertEquals("", secondItem.getISBN());
 		
 	}
 
