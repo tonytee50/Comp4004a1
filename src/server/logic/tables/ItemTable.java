@@ -31,4 +31,21 @@ public class ItemTable {
         return ItemListHolder.INSTANCE;
     }
     
+	public boolean lookup(String string) {
+		boolean result=true;
+		int flag=0;
+		for(int i=0;i<itemList.size();i++){
+			String ISBN=(itemList.get(i)).getISBN();
+			if(ISBN.equalsIgnoreCase(string)){
+				flag=flag+1;
+			}else{
+				flag=flag+0;	
+			}
+		}
+		if(flag==0){
+			result=false;
+		}
+		return result;
+	}
+    
 }

@@ -27,12 +27,15 @@ public class TestItemTable {
 		assertNotNull(new ItemTable());
 		assertNotNull(itemTable1);
 		
-		//test getInstance function
+		//test getInstance method
 		assertEquals(itemTable1.getInstance(), itemTable2.getInstance());
 		assertEquals(ItemTable.getInstance(), ItemTable.getInstance());
 		
+		//test lookup method
+		assertTrue(itemTable1.lookup("9781442668584"));
+		assertFalse(itemTable1.lookup("1234567891234"));
 		
-
+		
 	}
 
 }
