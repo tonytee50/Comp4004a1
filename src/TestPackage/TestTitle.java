@@ -30,6 +30,7 @@ public class TestTitle {
 		//test getTitle method
 		assertEquals("The Title", firstTitle.getBooktitle());
 		
+		//test toString method
 		assertEquals("[1232145678912,The Title]", firstTitle.toString());
 	}
 
