@@ -50,6 +50,12 @@ public class TestFeeTable {
 //		System.out.println(newFee.feeList);
 //		assertEquals(6, newFee.lookupfee(1));
 		
+		//test getFeeTable method
+		assertEquals(newFee.feeList, newFee.getFeeTable());
+		Fee otherFee = new Fee(1,6);
+		newFee2.feeList.add(otherFee);
+		assertEquals(newFee2.feeList, newFee2.getFeeTable());
+		
 		
 	}
 	

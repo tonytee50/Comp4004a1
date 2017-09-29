@@ -75,5 +75,8 @@ public class FeeTable {
 		}
 		return fee;
 	}
-
+	
+	public List<Fee> getFeeTable() {
+		return feeList;
+	}
 }
