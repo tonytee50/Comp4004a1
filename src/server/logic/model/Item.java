@@ -3,16 +3,15 @@ package server.logic.model;
 public class Item {
 	int itemid;
 	String ISBN;
-	String copynumber;
+	//String copynumber;
 	
-	public Item(int itemid,String ISBN,String copynumber){
+	public Item(int itemid,String ISBN){
 		this.itemid=itemid;
 		this.ISBN=ISBN;
-		this.copynumber=copynumber;
 	}
 	
 	public String toString(){
-		return "["+this.itemid+","+this.ISBN+","+this.copynumber+"]";
+		return "["+this.itemid+","+this.ISBN+"]";
 	}
 	
 	public int getItemid() {
@@ -21,8 +20,5 @@ public class Item {
 	public String getISBN() {
 		return ISBN;
 	}
-	public String getCopynumber() {
-		return copynumber;
-	}
-
+	
 }
