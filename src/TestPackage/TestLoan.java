@@ -38,6 +38,9 @@ public class TestLoan {
 		//Test getISBN method
 		assertEquals("1234567890123", firstLoan.getIsbn());
 		
+		//Test getCopyNumber
+		assertEquals("10", firstLoan.getCopynumber());
+		
 	}
 
 }
