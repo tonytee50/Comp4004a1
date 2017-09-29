@@ -11,12 +11,13 @@ import server.logic.tables.FeeTable;
 public class TestFeeTable {
 
 	FeeTable newFee;
+	FeeTable newFee2;
 	
 	@Before
 	public void setUp() throws Exception {
 		
 		newFee = new FeeTable();
-		
+		newFee2 = new FeeTable();
 	}
 
 	@After
@@ -33,6 +34,9 @@ public class TestFeeTable {
 		//testing checkUser method
 		assertEquals(true, newFee.checkuser(0));
 		assertEquals(false, newFee.checkuser(1));
+		
+		//test getInstance
+		assertEquals(newFee.getInstance(), newFee2.getInstance());
 		
 	}
 	

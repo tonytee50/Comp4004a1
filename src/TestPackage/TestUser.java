@@ -31,6 +31,7 @@ public class TestUser {
 		
 		//test the getLoansAmount method
 		assertEquals(0, newUser.getloansAmount());
+
 	}
 
 }

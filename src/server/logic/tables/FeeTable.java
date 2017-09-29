@@ -31,5 +31,14 @@ public class FeeTable {
 		}
 		return result;
 	}
+	
+	private static class FeeListHolder {
+        private static final FeeTable INSTANCE = new FeeTable();
+    }
+
+	public static final FeeTable getInstance() {
+        return FeeListHolder.INSTANCE;
+    }
+
 
 }
