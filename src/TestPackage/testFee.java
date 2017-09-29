@@ -1,4 +1,4 @@
-package TestPackage;
+package testPackage;
 
 import static org.junit.Assert.*;
 
@@ -32,6 +32,10 @@ public class testFee {
 		//test getUserID method
 		assertEquals(1234, firstFee.getUserid());
 		assertEquals(99997771, secondFee.getUserid());
+		
+		//test getFee method
+		assertEquals(0, secondFee.getFee());
+		assertEquals(12, firstFee.getFee());
 	}
 
 }

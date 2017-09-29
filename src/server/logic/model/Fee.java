@@ -14,5 +14,7 @@ public class Fee {
 	public int getUserid() {
 		return userid;
 	}
-
+	public int getFee() {
+		return fee;
+	}
 }
