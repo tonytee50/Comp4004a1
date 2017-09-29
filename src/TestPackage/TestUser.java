@@ -22,10 +22,15 @@ public class TestUser {
 	}
 
 	@Test
-	public void test() {
-		
+	public void test() {	
+		//test the toString method
 		assertEquals("[1234,0]", newUser.toString());
 		
+		//test the getUserId method
+		assertEquals(1234, newUser.getUserid());	
+		
+		//test the getLoansAmount method
+		assertEquals(0, newUser.getloansAmount());
 	}
 
 }

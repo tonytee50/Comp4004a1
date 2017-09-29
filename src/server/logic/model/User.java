@@ -13,4 +13,12 @@ public class User {
 		return "["+this.userid+","+ this.loansAmount + "]";
 	}
 	
+	public int getUserid() {
+		return userid;
+	}
+	
+	public int getloansAmount() {
+		return this.loansAmount;
+	}
+
 }
