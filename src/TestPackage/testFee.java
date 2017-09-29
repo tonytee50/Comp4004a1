@@ -28,6 +28,10 @@ public class testFee {
 		//test toString method
 		assertEquals("[1234,12]", firstFee.toString());
 		assertEquals("[99997771,0]", secondFee.toString());
+		
+		//test getUserID method
+		assertEquals(1234, firstFee.getUserid());
+		assertEquals(99997771, secondFee.getUserid());
 	}
 
 }
