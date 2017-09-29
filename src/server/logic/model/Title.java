@@ -12,5 +12,8 @@ public class Title {
 	public String getISBN() {
 		return ISBN;
 	}
-
+	
+	public String getBooktitle() {
+		return booktitle;
+	}
 }

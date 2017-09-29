@@ -27,6 +27,10 @@ public class TestTitle {
 		//test getISBN method
 		assertEquals("1232145678912", firstTitle.getISBN());
 		
+		//test getTitle method
+		assertEquals("The Title", firstTitle.getBooktitle());
+		
+		
 	}
 
 }
