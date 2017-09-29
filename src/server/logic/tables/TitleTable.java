@@ -8,7 +8,7 @@ import server.logic.model.Title;
 
 public class TitleTable {
 
-	List<Title> titleList=new ArrayList<Title>();
+	public List<Title> titleList=new ArrayList<Title>();
     private static class TitleListHolder {
         private static final TitleTable INSTANCE = new TitleTable();
     }
@@ -22,8 +22,14 @@ public class TitleTable {
 		}
     	
     };
+    
     public static final TitleTable getInstance() {
         return TitleListHolder.INSTANCE;
     }
+    
+	public List<Title> getTitleTable() {
+		return titleList;
+	}
+    
 
 }

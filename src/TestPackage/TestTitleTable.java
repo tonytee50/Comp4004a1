@@ -30,6 +30,10 @@ public class TestTitleTable {
 		assertNotNull(TitleTable.getInstance());
 	}
 	
-	
+	@Test
+	public void testGetTable() {
+		String[] check = {"[9781442668584,By the grace of God]", "[9781442616899,Dante's lyric poetry ]", "[9781442667181,Courtesy lost]", "[9781611687910,Writing for justice]", "[9781317594277,The act in context]"};
+		assertEquals(check, titleTable1.titleList);
+	}
 
 }
