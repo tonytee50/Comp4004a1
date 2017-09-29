@@ -23,4 +23,14 @@ public class LoanTable {
     	//logger.info(String.format("Operation:Initialize LoanTable;LoanTable: %s", loanList));
     };
    
+    private static class LoanListHolder {
+        private static final LoanTable INSTANCE = new LoanTable();
+    }
+    
+    public static final LoanTable getInstance() {
+        return LoanListHolder.INSTANCE;
+    }
+    
+    
+    
 }

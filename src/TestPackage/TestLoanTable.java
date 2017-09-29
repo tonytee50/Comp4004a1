@@ -11,11 +11,13 @@ import server.logic.tables.LoanTable;
 public class TestLoanTable {
 	
 	LoanTable loanTable;
+	LoanTable loanTable2;
 
 	@Before
 	public void setUp() throws Exception {
 		
 		loanTable = new LoanTable();
+		loanTable2 = new LoanTable();
 		
 	}
 
@@ -29,6 +31,12 @@ public class TestLoanTable {
 		//test constructor
 		assertNotNull(new LoanTable());
 		assertNotNull(loanTable);
+		
+		//test getInstance method
+		assertEquals(loanTable.getInstance(), loanTable2.getInstance());
+		assertEquals(LoanTable.getInstance(), LoanTable.getInstance());
+		
+		
 		
 	}
 
