@@ -10,10 +10,12 @@ public class Fee {
 	public String toString(){
 		return "["+this.userid+","+this.fee+"]";
 	}
+	
 	public int getUserid() {
 		return userid;
 	}
 	public int getFee() {
 		return fee;
 	}
+
 }

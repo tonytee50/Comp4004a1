@@ -28,5 +28,7 @@ public class Loan {
 	public int getUserid() {
 		return userid;
 	}
-
+	public String getIsbn() {
+		return isbn;
+	}
 }

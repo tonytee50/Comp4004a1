@@ -35,6 +35,9 @@ public class TestLoan {
 		//Test getUserID method
 		assertEquals(123, firstLoan.getUserid());
 		
+		//Test getISBN method
+		assertEquals("1234567890123", firstLoan.getIsbn());
+		
 	}
 
 }
