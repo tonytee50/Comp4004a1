@@ -16,5 +16,7 @@ public class Fee {
 	}
 	public int getFee() {
 		return fee;
-	}
+	}	
+	
+
 }
