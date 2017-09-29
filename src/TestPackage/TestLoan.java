@@ -43,6 +43,9 @@ public class TestLoan {
 		
 		//test getDate method
 		assertEquals(date, firstLoan.getDate());
+		
+		//test getRenewstate method
+		assertEquals("Good", firstLoan.getRenewstate());
 	}
 
 }
