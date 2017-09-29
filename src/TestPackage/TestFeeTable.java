@@ -38,6 +38,10 @@ public class TestFeeTable {
 		//test getInstance
 		assertEquals(newFee.getInstance(), newFee2.getInstance());
 		
+		//test lookup method
+		assertTrue(newFee.lookup(1));
+		assertFalse(newFee.lookup(0));
+		
 	}
 	
 }

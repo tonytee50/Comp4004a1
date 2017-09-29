@@ -7,7 +7,7 @@ import server.logic.model.Fee;
 public class FeeTable {
 	
 //	private Logger logger = Trace.getInstance().getLogger("opreation_file");
-	List<Fee> feeList=new ArrayList<Fee>();
+	public List<Fee> feeList=new ArrayList<Fee>();
 	
     public FeeTable(){
     	//set up the default list with some instances
@@ -40,5 +40,24 @@ public class FeeTable {
         return FeeListHolder.INSTANCE;
     }
 
+	public boolean lookup(int j) {
+		boolean result=true;
+		int fee = 0;
+		boolean user=FeeTable.getInstance().checkuser(j);
+		if(user){
+			for(int i=0;i<feeList.size();i++){
+				int userid=(feeList.get(i)).getUserid();
+				if(userid==j){
+					fee=fee+feeList.get(i).getFee();
+				}
+			}	
+		}else{
+			fee=0;
+		}
+		if(fee!=0){
+			result=false;
+		}
+		return result;
+	}
 
 }
