@@ -12,7 +12,7 @@ public class ItemTable {
 
 	public List<Item> itemList=new ArrayList<Item>();
     
-    public ItemTable(){
+    private ItemTable(){
     	//set up the default list with some instances
     	String[] ISBNList=new String[]{"9781442668584","9781442616899","9781442667181","9781611687910"};
     	for(int i=0;i<ISBNList.length;i++){

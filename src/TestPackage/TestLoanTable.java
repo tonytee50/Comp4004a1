@@ -16,8 +16,8 @@ public class TestLoanTable {
 	@Before
 	public void setUp() throws Exception {
 		
-		loanTable = new LoanTable();
-		loanTable2 = new LoanTable();
+		loanTable = LoanTable.getInstance();
+		loanTable2 = LoanTable.getInstance();
 		
 	}
 
@@ -26,17 +26,24 @@ public class TestLoanTable {
 	}
 
 	@Test
-	public void test() {
-		
+	public void testConstructor() {
 		//test constructor
-		assertNotNull(new LoanTable());
+		assertNotNull(LoanTable.getInstance());
 		assertNotNull(loanTable);
-		
+	}
+	
+	@Test
+	public void testInstance() {
 		//test getInstance method
 		assertEquals(loanTable.getInstance(), loanTable2.getInstance());
 		assertEquals(LoanTable.getInstance(), LoanTable.getInstance());
-		
-		
+	}
+	
+	@Test
+	public void testCheckLoan() {
+		//test checkLoan method
+		assertFalse(loanTable.checkLoan("9781442668584"));
+		assertTrue(loanTable.checkLoan("1234"));
 		
 	}
 

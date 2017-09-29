@@ -18,25 +18,34 @@ public class TestItemTable {
 	@Before
 	public void setUp() throws Exception {
 		
-		itemTable1 = new ItemTable();
-		itemTable2 = new ItemTable();
+		itemTable1 = ItemTable.getInstance();
+		itemTable2 = ItemTable.getInstance();
 	}
 
 	@Test
 	public void test() {
 		
 		//Test constructor
-		assertNotNull(new ItemTable());
+		assertNotNull(ItemTable.getInstance());
 		assertNotNull(itemTable1);
-		
+	}
+	
+	@Test
+	public void testInstance() {
 		//test getInstance method
 		assertEquals(itemTable1.getInstance(), itemTable2.getInstance());
 		assertEquals(ItemTable.getInstance(), ItemTable.getInstance());
-		
+	}
+	
+	@Test
+	public void testLookUp() {
 		//test lookup method
 		assertTrue(itemTable1.lookup("9781442668584"));
 		assertFalse(itemTable1.lookup("1234567891234"));
-		
+	}
+	
+	@Test
+	public void testGetItemTable() {
 		//test getItemTable method
 		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
 		itemTable1.itemList.add(new Item(12,"1234567890123"));

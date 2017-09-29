@@ -22,14 +22,20 @@ public class TestTitle {
 	}
 
 	@Test
-	public void test() {
-
+	public void testISBNGetter() {
 		//test getISBN method
 		assertEquals("1232145678912", firstTitle.getISBN());
-		
+	
+	}
+	
+	@Test
+	public void testTitleGetter() {
 		//test getTitle method
 		assertEquals("The Title", firstTitle.getBooktitle());
-		
+	}
+	
+	@Test
+	public void testToString() {
 		//test toString method
 		assertEquals("[1232145678912,The Title]", firstTitle.toString());
 	}
