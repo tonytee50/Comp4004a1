@@ -25,8 +25,15 @@ public class TestFeeTable {
 
 	@Test
 	public void test() {
+		
 		//test constructor
-		assertNotNull(new FeeTable());		
+		assertNotNull(new FeeTable());
+		
+		
+		//testing checkUser method
+		assertEquals(true, newFee.checkuser(0));
+		assertEquals(false, newFee.checkuser(1));
+		
 	}
-
+	
 }

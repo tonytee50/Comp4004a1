@@ -13,7 +13,23 @@ public class FeeTable {
     	//set up the default list with some instances
     	Fee fee=new Fee(0,5);
     	feeList.add(fee);
-    //	Initialization();
     };
     
+	public boolean checkuser(int j) {
+		boolean result=true;
+		int fee = 0;
+		for(int i=0;i<feeList.size();i++){
+			int userid=(feeList.get(i)).getUserid();
+			if(userid==j){
+				fee=fee+1;
+			}else{
+				fee=fee+0;
+			}
+		}	
+		if(fee==0){
+			result=false;
+		}
+		return result;
+	}
+
 }
