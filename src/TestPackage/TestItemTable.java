@@ -48,7 +48,7 @@ public class TestItemTable {
 	public void testGetItemTable() {
 		//test getItemTable method
 		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
-		itemTable1.itemList.add(new Item(12,"1234567890123"));
+		itemTable1.itemList.add(new Item(12,"1234567890123","1"));
 		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
 	}
 

@@ -16,8 +16,8 @@ public class TestItem {
 	@Before
 	public void setUp() throws Exception {
 		
-		firstItem = new Item(0, "1234567891023");
-		secondItem = new Item(22, "");
+		firstItem = new Item(0, "1234567891023","1");
+		secondItem = new Item(22, "","1");
 	}
 
 	@After
@@ -27,8 +27,8 @@ public class TestItem {
 	@Test
 	public void testToString() {
 		//test toString method
-		assertEquals("[0,1234567891023]", firstItem.toString());
-		assertEquals("[22,]", secondItem.toString());	
+		assertEquals("[0,1234567891023,1]", firstItem.toString());
+		assertEquals("[22,,1]", secondItem.toString());	
 
 	}
 	

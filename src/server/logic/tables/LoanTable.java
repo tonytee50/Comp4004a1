@@ -14,7 +14,11 @@ import server.logic.model.Loan;
 
 public class LoanTable {
 
-	List<Loan> loanList=new ArrayList<Loan>();
+	public List<Loan> loanList=new ArrayList<Loan>();
+	
+	private static class LoanListHolder {
+        private static final LoanTable INSTANCE = new LoanTable();
+    }
     
     private LoanTable(){
     	//set up the default list with some instances
@@ -22,21 +26,18 @@ public class LoanTable {
     	loanList.add(loan);
     	//logger.info(String.format("Operation:Initialize LoanTable;LoanTable: %s", loanList));
     };
-   
-    private static class LoanListHolder {
-        private static final LoanTable INSTANCE = new LoanTable();
-    }
     
     public static final LoanTable getInstance() {
         return LoanListHolder.INSTANCE;
     }
     
-    public boolean checkLoan(String string) {
+	public boolean checkLoan(String string, String string2) {
 		boolean result=true;
 		int flag=0;
 		for(int i=0;i<loanList.size();i++){
 			String ISBN=(loanList.get(i)).getIsbn();
-			if(ISBN.equalsIgnoreCase(string)){
+			String copynumber=(loanList.get(i)).getCopynumber();
+			if(ISBN.equalsIgnoreCase(string) && copynumber.equalsIgnoreCase(string2)){
 				flag=flag+1;
 			}else{
 				flag=flag+0;	
@@ -48,6 +49,31 @@ public class LoanTable {
 		return result;
 	}
     
+	public Object returnItem(int j, String string, String string2, Date date) {
+		String result="";
+		int flag=0;
+		int index=0;
+		for(int i=0;i<loanList.size();i++){
+			String ISBN=(loanList.get(i)).getIsbn();
+			String copynumber=(loanList.get(i)).getCopynumber();
+			int userid=(loanList.get(i)).getUserid();
+			if((userid==j) && ISBN.equalsIgnoreCase(string) && copynumber.equalsIgnoreCase(string2)){
+				flag=flag+1;
+				index=i;
+			}else{
+				flag=flag+0;	
+			}
+		}
+		if(flag!=0){
+			long time = date.getTime()-loanList.get(index).getDate().getTime();
+			loanList.remove(index);
+			result="success";
+		}else{
+			result="The Loan Does Not Exist";
+		}
+		
+		return result;
+	}
     
     
 }
