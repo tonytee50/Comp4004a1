@@ -64,5 +64,15 @@ public class TestTitleTable {
 		
 		assertEquals(true, titleTable1.createtitle("1234567891234", "This Title"));
 	}
+	
+	@Test 
+	public void testLookUp() {
+		
+		for(int i = 0; i<titleTable1.titleList.size(); i++) {
+			assertEquals(true,titleTable1.lookup(titleTable1.titleList.get(0).getISBN()));
+		}
+		
+		assertEquals(false,titleTable1.lookup("1234567891233"));
+	}
 
 }
