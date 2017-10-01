@@ -54,5 +54,15 @@ public class TestTitleTable {
     	System.out.println(titleTable1.titleList);
 		assertEquals(5, titleTable1.titleList.size());
 	}
+	
+	@Test
+	public void testCreateTitle() {
+		
+		for(int i = 0; i<titleTable1.titleList.size(); i++) {
+			assertEquals(false,titleTable1.createtitle(titleTable1.titleList.get(0).getISBN(), "This Title"));
+		}
+		
+		assertEquals(true, titleTable1.createtitle("1234567891234", "This Title"));
+	}
 
 }
