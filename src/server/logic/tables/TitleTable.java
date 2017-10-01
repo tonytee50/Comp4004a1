@@ -9,6 +9,7 @@ import server.logic.model.Title;
 public class TitleTable {
 
 	public List<Title> titleList=new ArrayList<Title>();
+	
     private static class TitleListHolder {
         private static final TitleTable INSTANCE = new TitleTable();
     }

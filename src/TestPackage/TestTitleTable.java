@@ -2,21 +2,28 @@ package TestPackage;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import server.logic.model.Title;
 import server.logic.tables.TitleTable;
 
 public class TestTitleTable {
 	
 	TitleTable titleTable1;
 	TitleTable titleTable2;
+	public List<Title> titleLister;
+	
 
 	@Before
 	public void setUp() throws Exception {
 		titleTable1 = TitleTable.getInstance();
 		titleTable2 = TitleTable.getInstance();
+		titleLister = new ArrayList<Title>();
 	}
 
 	@After
@@ -32,8 +39,20 @@ public class TestTitleTable {
 	
 	@Test
 	public void testGetTable() {
-		String[] check = {"[9781442668584,By the grace of God]", "[9781442616899,Dante's lyric poetry ]", "[9781442667181,Courtesy lost]", "[9781611687910,Writing for justice]", "[9781317594277,The act in context]"};
-		assertEquals(check, titleTable1.titleList);
+		
+		String[] ISBNList=new String[]{"9781442668584","9781442616899","9781442667181","9781611687910","9781317594277"};
+    	String[] titlenameList=new String[]{"By the grace of God","Dante's lyric poetry ","Courtesy lost","Writing for justice","The act in context"};
+    	for(int i=0;i<ISBNList.length;i++){
+    		Title detitle=new Title(ISBNList[i],titlenameList[i]);
+    		titleLister.add(detitle);
+    		assertEquals(titleLister.get(i).getBooktitle(), titleTable1.titleList.get(i).getBooktitle());
+    		assertEquals(titleLister.get(i).getISBN(), titleTable2.titleList.get(i).getISBN());
+    		assertEquals(i+1, titleLister.size());
+    	}
+    	
+    	System.out.println(titleLister);
+    	System.out.println(titleTable1.titleList);
+		assertEquals(5, titleTable1.titleList.size());
 	}
 
 }
