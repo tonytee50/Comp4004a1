@@ -26,4 +26,16 @@ public class Item {
 		return copynumber;
 	}
 	
+	public void setItemid(int itemid) {
+		this.itemid = itemid;
+	}
+	
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+	
+	public void setCopynumber(String copynumber) {
+		this.copynumber = copynumber;
+	}
+	
 }
