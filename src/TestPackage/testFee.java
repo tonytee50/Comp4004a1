@@ -48,6 +48,19 @@ public class testFee {
 		assertEquals(12, firstFee.getFee());		
 	
 	}
+	
+	@Test
+	public void testSetters() {
+		assertEquals(1234, firstFee.getUserid());
+		assertEquals(12, firstFee.getFee());
+		
+		firstFee.setFee(13);
+		firstFee.setUserid(123);
+		
+		assertEquals(123, firstFee.getUserid());
+		assertEquals(13, firstFee.getFee());
+		
+	}
 
 }
 
