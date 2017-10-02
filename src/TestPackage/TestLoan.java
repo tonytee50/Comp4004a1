@@ -67,4 +67,26 @@ public class TestLoan {
 		assertEquals("1", firstLoan.getRenewstate());
 	}
 	
+	@Test 
+	public void testSetters() {
+		assertEquals(123, firstLoan.getUserid());
+		assertEquals("1234567890123", firstLoan.getIsbn());
+		assertEquals("10", firstLoan.getCopynumber());
+		assertEquals(date, firstLoan.getDate());
+		assertEquals("1", firstLoan.getRenewstate());
+		
+		firstLoan.setUserid(1234);
+		firstLoan.setIsbn("1212121212121");
+		firstLoan.setCopynumber("11");
+		firstLoan.setDate(null);
+		firstLoan.setRenewstate("2");
+		
+		assertEquals(1234, firstLoan.getUserid());
+		assertEquals("1212121212121", firstLoan.getIsbn());
+		assertEquals("11", firstLoan.getCopynumber());
+		assertEquals(null, firstLoan.getDate());
+		assertEquals("2", firstLoan.getRenewstate());
+		
+	}
+	
 }

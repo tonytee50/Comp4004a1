@@ -40,5 +40,26 @@ public class Loan {
 	public String getRenewstate() {
 		return renewstate;
 	}
+	
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	
+	public void setCopynumber(String copynumber) {
+		this.copynumber = copynumber;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	public void setRenewstate(String renewstate) {
+		this.renewstate = renewstate;
+	}
+	
 
 }
