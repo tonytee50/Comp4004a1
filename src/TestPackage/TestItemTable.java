@@ -1,6 +1,9 @@
 package TestPackage;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -40,7 +43,7 @@ public class TestItemTable {
 	@Test
 	public void testLookUp() {
 		//test lookup method
-		assertTrue(itemTable1.lookup("9781442668584"));
+		assertTrue(itemTable1.lookup("9781442667181"));
 		assertFalse(itemTable1.lookup("1234567891234"));
 	}
 	
@@ -51,5 +54,20 @@ public class TestItemTable {
 		itemTable1.itemList.add(new Item(12,"1234567890123","1"));
 		assertEquals(itemTable1.itemList, itemTable1.getItemTable());
 	}
+	
+	@Test
+	public void testDeleteAll() {
+		//System.out.println(itemTable1.itemList.size());
+		//System.out.println(itemTable1.itemList);
+		Item theItem = new Item(0,"N/A","N/A");
+		itemTable1.deleteAll("9781442668584");
+		assertEquals(theItem.toString(), itemTable1.itemList.get(0).toString());
+		System.out.println(itemTable1.itemList);
+		System.out.println(itemTable1.itemList.size());
+		for(int i = 1; i<itemTable1.itemList.size(); i++) {
+			assertThat(theItem.toString(), is(not(itemTable1.itemList.get(i).toString())));
+		}
+	}
+	
 
 }
