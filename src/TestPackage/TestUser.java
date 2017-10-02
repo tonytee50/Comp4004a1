@@ -14,7 +14,7 @@ public class TestUser {
 	
 	@Before
 	public void setUp() throws Exception {
-		newUser = new User(1234, 0);
+		newUser = new User(1234, "Username", "Pass");
 	}
 
 	@After
@@ -22,9 +22,14 @@ public class TestUser {
 	}
 
 	@Test
-	public void testGetLoans() {			
+	public void testGetUsername() {			
 		//test the getLoansAmount method
-		assertEquals(0, newUser.getloansAmount());
+		assertEquals("Username", newUser.getUsername());
+	}
+	
+	@Test
+	public void testGetPassword() {
+		assertEquals("Pass", newUser.getPassword());
 	}
 	
 	@Test
@@ -36,7 +41,24 @@ public class TestUser {
 	@Test
 	public void testtoString() {
 		//test the toString method
-		assertEquals("[1234,0]", newUser.toString());
+		assertEquals("[1234,Username,Pass]", newUser.toString());
+	}
+	
+	@Test
+	public void testSetters() {
+		assertEquals("Username", newUser.getUsername());
+		assertEquals("Pass", newUser.getPassword());
+		assertEquals(1234, newUser.getUserid());
+		assertEquals("[1234,Username,Pass]", newUser.toString());
+		
+		newUser.setUsername("User");
+		newUser.setPassword("Password");
+		newUser.setUserid(123);
+		
+		assertEquals("User", newUser.getUsername());
+		assertEquals("Password", newUser.getPassword());
+		assertEquals(123, newUser.getUserid());
+		assertEquals("[123,User,Password]", newUser.toString());
 	}
 
 }
