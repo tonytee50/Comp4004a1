@@ -75,6 +75,20 @@ public class TestTitleTable {
 		assertEquals(false,titleTable1.lookup("1234567891233"));
 	}
 	
+	@Test
+	public void testDelete() {
+		//Test every case
+		//Case where it was able to delete
+		System.out.println(titleTable1.titleList);
+		assertEquals("success", titleTable1.delete("9781442616899"));
+		assertEquals("success", titleTable1.delete("9781442667181"));
+		
+		//Case where loan exists
+		assertEquals("Active Loan Exists", titleTable1.delete("9781442668584"));
+		
+		//case where title doesn't exist
+		assertEquals("The Title Does Not Exist", titleTable1.delete("1212121212121"));
+	}
 	
 
 }
