@@ -39,5 +39,16 @@ public class TestTitle {
 		//test toString method
 		assertEquals("[1232145678912,The Title]", firstTitle.toString());
 	}
+	
+	@Test
+	public void testSetters() {
+		
+		firstTitle.setBooktitle("The new Title");
+		firstTitle.setISBN("1212121212121");
+
+		assertEquals("The new Title", firstTitle.getBooktitle());
+		assertEquals("1212121212121", firstTitle.getISBN());
+				
+	}
 
 }

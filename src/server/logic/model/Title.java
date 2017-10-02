@@ -19,5 +19,15 @@ public class Title {
 	public String toString(){
 		return "["+this.ISBN+","+this.booktitle+"]";
 	}
+	
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+	
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
+	}
+	
+	
 
 }
