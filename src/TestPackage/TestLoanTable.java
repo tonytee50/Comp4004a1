@@ -32,6 +32,15 @@ public class TestLoanTable {
 	@After
 	public void tearDown() throws Exception {
 	}
+	
+	@Test
+	public void testCheckUser() {
+		for(int i = 0; i<loanTable.loanList.size(); i++) {
+			assertEquals(false, loanTable.checkUser(loanTable.loanList.get(i).getUserid()));
+		}
+		//check if user isn't in the loanTable it should return true
+		assertEquals(true, loanTable.checkUser(123));
+	}
 
 	@Test
 	public void testConstructor() {
@@ -83,7 +92,7 @@ public class TestLoanTable {
 	@Test
 	public void testCheckLoan1() {
 		//test checkLoan method
-		Loan loan=new Loan(0,"9781442668585","1",new Date(),"0");
+		Loan loan=new Loan(2,"9781442668525","1",new Date(),"0");
 		loanTable2.loanList.add(loan);
 		assertTrue(loanTable.checkLoan("1234"));
 		System.out.println(loanTable.loanList);

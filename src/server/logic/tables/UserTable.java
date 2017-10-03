@@ -102,5 +102,4 @@ public class UserTable {
 		return result;
 	}
     
-    
 }
