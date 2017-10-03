@@ -76,5 +76,13 @@ public class TestUserTable {
     	}
     	assertEquals(7, userTable.getUserTable().size());
 	}
+	
+	@Test
+	public void testLookupString() {
+		for(int i = 0; i < userTable.userList.size(); i++) {
+			assertEquals(i, userTable.lookup(userTable.userList.get(i).getUsername()));
+		}
+		assertEquals(-1, userTable.lookup("john@carleton.ca"));
+	}
 
 }
