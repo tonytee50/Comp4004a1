@@ -7,8 +7,8 @@ public class User {
 	
 	public User(int userid,String username,String password){
 		this.userid=userid;
-		this.password=password;
 		this.username=username;
+		this.password=password;
 	}
 	
 	

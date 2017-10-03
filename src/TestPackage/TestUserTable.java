@@ -16,12 +16,14 @@ import server.logic.tables.UserTable;
 public class TestUserTable {
 	
 	UserTable userTable;
+	UserTable userTable1;
 	List<User> userLister;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		userTable = UserTable.getInstance();
+		userTable1 = UserTable.getInstance();
 		userLister=new ArrayList<User>();
 	}
 
@@ -35,9 +37,18 @@ public class TestUserTable {
 		assertNotNull(userTable);
 		assertNotNull(UserTable.getInstance());
 		//test the size of it's array on initialization
-		assertEquals(5, userTable.userList.size());
+		assertEquals(7, userTable.userList.size()); 
 		//test for equality
 		assertEquals(userTable, UserTable.getInstance());
+	}
+	
+	@Test
+	public void testCreateUser() {
+		for (int i = 0; i<userTable1.userList.size(); i++) {
+			assertEquals(false, userTable1.createuser(userTable1.userList.get(0).getUsername(), userTable1.userList.get(0).getPassword()));
+		}
+		assertEquals(true, userTable1.createuser("Tonyo@carleton.ca", "myPass"));
+		assertEquals(true, userTable1.createuser("Tony@carleton.ca", "myPass"));
 	}
 
 }
