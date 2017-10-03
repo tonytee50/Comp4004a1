@@ -45,14 +45,14 @@ public class TestTitleTable {
     	for(int i=0;i<ISBNList.length;i++){
     		Title detitle=new Title(ISBNList[i],titlenameList[i]);
     		titleLister.add(detitle);
-    		assertEquals(titleLister.get(i).getBooktitle(), titleTable1.titleList.get(i).getBooktitle());
-    		assertEquals(titleLister.get(i).getISBN(), titleTable2.titleList.get(i).getISBN());
+    		assertEquals(titleLister.get(i).getBooktitle(), titleTable1.getTitleTable().get(i).getBooktitle());
+    		assertEquals(titleLister.get(i).getISBN(), titleTable2.getTitleTable().get(i).getISBN());
     		assertEquals(i+1, titleLister.size());
     	}
     	
     	System.out.println(titleLister);
-    	System.out.println(titleTable1.titleList);
-		assertEquals(5, titleTable1.titleList.size());
+    	System.out.println(titleTable1.getTitleTable());
+		assertEquals(5, titleTable1.getTitleTable().size());
 	}
 	
 	@Test

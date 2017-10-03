@@ -68,6 +68,7 @@ public class TestLoanTable {
 		assertEquals(loanTable.loanList, loanTable.getLoanTable());
 		assertEquals(loanTable2.loanList, loanTable.getLoanTable());
 		assertEquals(loanTable2.loanList, loanTable2.getLoanTable());
+		assertEquals(1, loanTable.getLoanTable().size());
 	}
 	
 	@Test
