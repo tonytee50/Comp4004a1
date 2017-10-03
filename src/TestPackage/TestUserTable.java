@@ -84,5 +84,17 @@ public class TestUserTable {
 		}
 		assertEquals(-1, userTable.lookup("john@carleton.ca"));
 	}
+	
+	@Test
+	public void testCheckUser() {
+		//test the case where the user is found
+		for(int i = 0; i<userTable.userList.size(); i++) {
+			assertEquals(0, userTable.checkUser(userTable.userList.get(i).getUsername(), userTable.userList.get(i).getPassword()));
+		}
+		//test the case where user is not found
+		assertEquals(2, userTable.checkUser("john@carleton.ca",userTable.userList.get(0).getPassword()));
+		//test the case where the password is false
+		assertEquals(1,userTable.checkUser(userTable.userList.get(0).getUsername(), userTable.userList.get(1).getPassword()));
+	}
 
 }
