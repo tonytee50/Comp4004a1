@@ -50,5 +50,15 @@ public class TestUserTable {
 		assertEquals(true, userTable1.createuser("Tonyo@carleton.ca", "myPass"));
 		assertEquals(true, userTable1.createuser("Tony@carleton.ca", "myPass"));
 	}
+	
+	@Test
+	public void testLookup() {
+		for(int i = 0; i<userTable.userList.size(); i++) {
+			assertEquals(true,userTable.lookup(userTable.userList.get(0).getUserid()));
+		}
+		
+		assertEquals(false,userTable.lookup(1233));
+		assertEquals(false,userTable.lookup(12333243));
+	}
 
 }
