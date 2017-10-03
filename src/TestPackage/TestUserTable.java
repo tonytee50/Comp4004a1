@@ -96,5 +96,14 @@ public class TestUserTable {
 		//test the case where the password is false
 		assertEquals(1,userTable.checkUser(userTable.userList.get(0).getUsername(), userTable.userList.get(1).getPassword()));
 	}
+	
+	@Test
+	public void testDelete() {
+		//test "Outstanding Fee Exists"
+		assertEquals("Outstanding Fee Exists", userTable.delete(userTable.userList.get(0).getUserid()));
+		//test success
+		assertEquals("success", userTable.delete(userTable.userList.get(5).getUserid()));
+		
+	}
 
 }
