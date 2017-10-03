@@ -60,5 +60,21 @@ public class TestUserTable {
 		assertEquals(false,userTable.lookup(1233));
 		assertEquals(false,userTable.lookup(12333243));
 	}
+	
+	@Test
+	public void testGetUserTable() {
+		String[] passwordList=new String[]{"Zhibo","Yu","Michelle","Kevin","Sun"};
+    	String[] usernameList=new String[]{"Zhibo@carleton.ca","Yu@carleton.ca","Michelle@carleton.ca","Kevin@carleton.ca","Sun@carleton.ca"};
+    	
+    	for(int i=0;i<usernameList.length;i++) {
+    		User deuser=new User(i,usernameList[i],passwordList[i]);
+			userLister.add(deuser);
+			assertEquals(userLister.get(i).getUsername(), userTable.getUserTable().get(i).getUsername());
+    		assertEquals(userLister.get(i).getPassword(), userTable.getUserTable().get(i).getPassword());
+    		assertEquals(userLister.get(i).getUserid(), userTable.getUserTable().get(i).getUserid());
+    		assertEquals(i+1, userLister.size());
+    	}
+    	assertEquals(7, userTable.getUserTable().size());
+	}
 
 }

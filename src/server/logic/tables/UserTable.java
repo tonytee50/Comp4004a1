@@ -65,5 +65,8 @@ public class UserTable {
 		return result;
 	}
     
-
+    public List<User> getUserTable() {
+		return userList;
+	}
+    
 }
