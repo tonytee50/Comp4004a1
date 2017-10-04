@@ -36,26 +36,32 @@ public class TestFeeTable {
 	public void testCheckUserMethod() {
 		//testing checkUser method
 		assertEquals(true, newFee.checkuser(0));
-		assertEquals(false, newFee.checkuser(1));
+		assertEquals(false, newFee.checkuser(2));
 	}
 	
 	@Test
 	public void testGetInstance() {
 		//test getInstance
 		assertEquals(newFee.getInstance(), newFee2.getInstance());
+		assertEquals(FeeTable.getInstance(), newFee2.getInstance());
+		assertNotNull(FeeTable.getInstance());
 	}
 	
 	@Test
 	public void testLookUpMethod() {
 		//test lookup method
-		assertTrue(newFee.lookup(1));
+		assertTrue(newFee.lookup(2));
 		assertFalse(newFee.lookup(0));
 	}
 	
 	@Test
 	public void testLookupFee() {
 		//test lookupFee method
-		assertEquals(5, newFee.lookupfee(0));	
+		assertEquals(5, newFee.lookupfee(0));
+		
+		for(int i = 2; i<10;i++) {
+			assertEquals(0, newFee.lookupfee(i));
+		}
 	}
 	
 	
@@ -66,6 +72,21 @@ public class TestFeeTable {
 		Fee otherFee = new Fee(1,6);
 		newFee2.feeList.add(otherFee);
 		assertEquals(newFee2.feeList, newFee2.getFeeTable());
+	}
+	
+	@Test
+	public void testPayFine() {
+		for(int i = 0; i<newFee.feeList.size(); i++) {
+			if (i == 0) {
+				assertEquals("Borrowing Items Exist", newFee.payfine(i));	
+			}else if (i == 1) {
+				assertEquals("success", newFee.payfine(i));
+			}else{
+				fail("This failed.");
+			}
+		}
+		
+		
 	}
 	
 }
