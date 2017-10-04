@@ -12,6 +12,7 @@ import org.junit.Test;
 import server.logic.model.Fee;
 import server.logic.model.Item;
 import server.logic.tables.ItemTable;
+import server.logic.tables.TitleTable;
 
 public class TestItemTable {
 	
@@ -67,6 +68,17 @@ public class TestItemTable {
 		for(int i = 1; i<itemTable1.itemList.size(); i++) {
 			assertThat(theItem.toString(), is(not(itemTable1.itemList.get(i).toString())));
 		}
+	}
+	
+	@Test
+	public void testCreateItem() {
+		//assertEquals(true, itemTable1.createitem("3451234576543"));
+		TitleTable titleTable = TitleTable.getInstance();
+		for(int i = 0; i<titleTable.titleList.size();i++) {
+			assertEquals(true, itemTable1.createitem(titleTable.titleList.get(i).getISBN()));
+		}
+		assertEquals(false, itemTable1.createitem("3451234576543"));
+		assertEquals(false, itemTable1.createitem("1111111111111"));
 	}
 	
 
