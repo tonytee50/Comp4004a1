@@ -101,8 +101,10 @@ public class TestUserTable {
 	public void testDelete() {
 		//test "Outstanding Fee Exists"
 		assertEquals("Outstanding Fee Exists", userTable.delete(userTable.userList.get(0).getUserid()));
-		//test success
+		//test success when it finds user to delete and user does not have active loan
 		assertEquals("success", userTable.delete(userTable.userList.get(5).getUserid()));
+		//test "The User Does Not Exist" when user doesn't exist
+		assertEquals("The User Does Not Exist", userTable.delete(userTable.userList.get(5).getUserid()+100));
 		
 	}
 
