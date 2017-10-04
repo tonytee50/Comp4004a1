@@ -12,6 +12,7 @@ import org.junit.Test;
 import server.logic.model.Fee;
 import server.logic.model.Item;
 import server.logic.tables.ItemTable;
+import server.logic.tables.LoanTable;
 import server.logic.tables.TitleTable;
 
 public class TestItemTable {
@@ -79,6 +80,19 @@ public class TestItemTable {
 		}
 		assertEquals(false, itemTable1.createitem("3451234576543"));
 		assertEquals(false, itemTable1.createitem("1111111111111"));
+	}
+	
+	@Test
+	public void testDeleteItem() {
+		LoanTable loanTable = LoanTable.getInstance();
+		for(int i = 0; i < loanTable.loanList.size(); i++) {
+			assertEquals("Active Loan Exists", itemTable1.delete(loanTable.loanList.get(i).getIsbn(), loanTable.loanList.get(i).getCopynumber()));
+		}
+		assertEquals("The Item Does Not Exist", itemTable1.delete("123", "123"));
+		assertEquals("The Item Does Not Exist", itemTable1.delete("1221323123212", "1221145432123"));
+		
+		assertEquals("success", itemTable1.delete(itemTable1.itemList.get(1).getISBN(), itemTable1.itemList.get(1).getCopyNumber()));
+		
 	}
 	
 
