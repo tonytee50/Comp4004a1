@@ -97,7 +97,6 @@ public class TestItemTable {
 	
 	@Test
 	public void testLookup1() {
-		
 		for(int i = 0; i<itemTable1.itemList.size(); i++) {
 			assertEquals(true, itemTable1.lookup(itemTable1.itemList.get(i).getISBN(), itemTable1.itemList.get(i).getCopyNumber()));
 			assertEquals(false, itemTable1.lookup(itemTable1.itemList.get(i).getISBN()+100, itemTable1.itemList.get(i).getCopyNumber()+100));

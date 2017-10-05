@@ -107,4 +107,9 @@ public class TestLoanTable {
 		}
 	}
 	
+	@Test
+	public void dateFormat() {
+		assertEquals(format1.format(date), loanTable.dateformat(date));
+	}
+	
 }

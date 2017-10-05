@@ -147,5 +147,12 @@ public class LoanTable {
 		}
 		return result;
 	}
+	
+	public String dateformat(Date date){
+		DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		String datestr=format1.format(date);
+		return datestr;
+	}
+	
 		
 }
