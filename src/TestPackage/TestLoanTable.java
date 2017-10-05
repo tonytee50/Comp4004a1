@@ -130,7 +130,7 @@ public class TestLoanTable {
 	
 	@Test
 	public void testCreateLoan() {
-		
+		//test the different cases
 		UserTable userTable = UserTable.getInstance();
 		TitleTable titleTable = TitleTable.getInstance();
 		ItemTable itemTable = ItemTable.getInstance();
@@ -147,6 +147,22 @@ public class TestLoanTable {
 		assertEquals("The Item is Not Available", loanTable.createloan(userTable.userList.get(0).getUserid(), loanTable.loanList.get(0).getIsbn(), loanTable.loanList.get(0).getCopynumber(), date));
 		assertEquals("success", loanTable.createloan(2, "9781442616899", "1", date));
 		assertEquals("The Maximun Number of Items is Reached", loanTable.createloan(1, "9781442667181", "1", date));
+	}
+	
+	@Test
+	public void testRenewal() {
+		//test the different cases
+		
+		//test when max number of items reached
+		assertEquals("The Maximun Number of Items is Reached", loanTable.renewal(loanTable.loanList.get(0).getUserid(), loanTable.loanList.get(0).getIsbn(), loanTable.loanList.get(0).getCopynumber(), date));
+		
+		//test when loan doesn't exist
+		assertEquals("The loan does not exist", loanTable.renewal(loanTable.loanList.get(3).getUserid(), loanTable.loanList.get(0).getIsbn(), loanTable.loanList.get(0).getCopynumber(), date));
+		
+		//test for success
+		assertEquals("success", loanTable.renewal(loanTable.loanList.get(3).getUserid(), loanTable.loanList.get(3).getIsbn(), loanTable.loanList.get(3).getCopynumber(), date));
+		
+		
 	}
 	
 }
