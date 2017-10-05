@@ -99,4 +99,12 @@ public class TestLoanTable {
 		assertFalse(loanTable2.checkLoan("9781442668584"));
 	}
 	
+	@Test
+	public void testLookup() {
+		for(int i=0; i<loanTable.loanList.size(); i++) {
+			assertEquals(false, loanTable.lookup(loanTable.loanList.get(i).getIsbn(), loanTable.loanList.get(i).getCopynumber()));
+			assertEquals(true, loanTable.lookup(loanTable.loanList.get(i).getIsbn()+100, loanTable.loanList.get(i).getCopynumber()+100));
+		}
+	}
+	
 }
