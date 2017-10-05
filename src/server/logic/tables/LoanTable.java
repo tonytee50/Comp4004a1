@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import server.logic.model.Loan;
 //import utilities.Config;
 //import utilities.Trace;
+import utilities.Config;
 
 public class LoanTable {
 
@@ -154,5 +155,21 @@ public class LoanTable {
 		return datestr;
 	}
 	
+	public boolean checkLimit(int j) {
+		boolean result=true;
+		int flag=0;
+		for(int i=0;i<loanList.size();i++){
+			int userid=(loanList.get(i)).getUserid();
+			if(userid==j){
+				flag=flag+1;
+			}else{
+				flag=flag+0;	
+			}
+		}
+		if(flag>=Config.MAX_BORROWED_ITEMS){
+			result=false;
+		}
+		return result;
+	}
 		
 }

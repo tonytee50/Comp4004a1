@@ -84,7 +84,7 @@ public class TestLoanTable {
 	public void testLookLimit() {
 		Loan loan=new Loan(2,"9781442668585","1",new Date(),"2");
 		loanTable.loanList.add(loan);
-		assertTrue(loanTable.looklimit(1));
+		assertTrue(loanTable.looklimit(4));
 		assertFalse(loanTable.looklimit(2));
 		
 	}
@@ -110,6 +110,18 @@ public class TestLoanTable {
 	@Test
 	public void dateFormat() {
 		assertEquals(format1.format(date), loanTable.dateformat(date));
+	}
+	
+	@Test
+	public void testCheckLimit() {
+		for(int i=0; i<loanTable.loanList.size(); i++) {
+			assertEquals(true, loanTable.checkLimit(loanTable.loanList.get(i).getUserid()));
+		}
+		Loan loan=new Loan(1,"9781442668584","1",new Date(),"0");
+    	loanTable.loanList.add(loan);
+    	loanTable.loanList.add(loan);
+    	loanTable.loanList.add(loan);
+    	assertEquals(false, loanTable.checkLimit(loanTable.loanList.get(2).getUserid()));
 	}
 	
 }
