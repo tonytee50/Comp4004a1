@@ -89,4 +89,18 @@ public class TestFeeTable {
 		
 	}
 	
+	@Test
+	public void testApplyFee() {
+		assertEquals(5, newFee.feeList.get(0).getFee());
+		newFee.applyfee(newFee.feeList.get(0).getUserid(), 10000000);
+		//now check if it applied the fee for user 
+		assertEquals(166, newFee.feeList.get(0).getFee());
+		
+		assertEquals(3, newFee.feeList.get(1).getFee());
+		newFee.applyfee(newFee.feeList.get(1).getUserid(), 100);
+		//now make sure it didn't apply the fee when it wasn't supposed to
+		assertEquals(3, newFee.feeList.get(1).getFee());
+		
+	}
+	
 }
