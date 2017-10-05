@@ -11,7 +11,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.model.Loan;
+import server.logic.tables.FeeTable;
+import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
+import server.logic.tables.TitleTable;
+import server.logic.tables.UserTable;
 
 public class TestLoanTable {
 	
@@ -122,6 +126,27 @@ public class TestLoanTable {
     	loanTable.loanList.add(loan);
     	loanTable.loanList.add(loan);
     	assertEquals(false, loanTable.checkLimit(loanTable.loanList.get(2).getUserid()));
+	}
+	
+	@Test
+	public void testCreateLoan() {
+		
+		UserTable userTable = UserTable.getInstance();
+		TitleTable titleTable = TitleTable.getInstance();
+		ItemTable itemTable = ItemTable.getInstance();
+		FeeTable feeTable = FeeTable.getInstance();
+		
+		for(int i = 0; i<userTable.userList.size(); i++) {
+			assertEquals("User Invalid", loanTable.createloan(userTable.userList.get(i).getUserid()+100, "", "", date));
+			assertEquals("ISBN Invalid",loanTable.createloan(userTable.userList.get(i).getUserid(), "", "", date));
+		}
+		for(int i = 0; i<itemTable.itemList.size(); i++) {
+			assertEquals("Copynumber Invalid",loanTable.createloan(userTable.userList.get(i).getUserid(), itemTable.itemList.get(i).getISBN(), "", date));
+		}
+		
+		assertEquals("The Item is Not Available", loanTable.createloan(userTable.userList.get(0).getUserid(), loanTable.loanList.get(0).getIsbn(), loanTable.loanList.get(0).getCopynumber(), date));
+		assertEquals("success", loanTable.createloan(2, "9781442616899", "1", date));
+		assertEquals("The Maximun Number of Items is Reached", loanTable.createloan(1, "9781442667181", "1", date));
 	}
 	
 }
