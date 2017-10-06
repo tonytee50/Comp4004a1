@@ -87,7 +87,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testDeleteItem() {
-		Output out = new Output("Your input should in this format:'ISBN,copynumber',ISBN should be a 13-digit number", 9);
+		Output out = new Output("Your input should be in this format:'ISBN,copynumber',ISBN should be a 13-digit number", 9);
 		assertEquals(out.toString(), outputHand.deleteItem("Hello mates!").toString());
 		assertEquals(out.toString(), outputHand.deleteItem("1,1234312345678").toString());
 		
@@ -97,11 +97,24 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testborrow() {
-		Output out = new Output("Your input should in this format:'useremail,ISBN,copynumber'", 10);
+		Output out = new Output("Your input should be in this format:'useremail,ISBN,copynumber'", 10);
 		assertEquals(out.toString(), outputHand.borrow("1234,vdsdsf,1").toString());
 		
 		Output out1 = new Output("The User Does Not Exist!", 10);
 		assertEquals(out1.toString(), outputHand.borrow("tony.tamer@carleton.ca,123,1").toString());
+		
+	}
+	
+	@Test
+	public void testReniew() {
+		Output out = new Output("Your input should be in this format:'useremail,ISBN,copynumber'", 11);
+		assertEquals(out.toString(), outputHand.renew("tony.tamercarleton.ca,123,1").toString());
+		
+		Output out1 = new Output("The User Does Not Exist!", 11);
+		assertEquals(out1.toString(), outputHand.renew("tony.tamer@111carleton.ca,1234321456784,1").toString());
+		
+		Output out2 = new Output("Outstanding Fee Exists!", 3);
+		assertEquals(out2.toString(), outputHand.renew("Zhibo@carleton.ca,9781442668584,1").toString());
 		
 	}
 

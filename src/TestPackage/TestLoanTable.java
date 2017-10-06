@@ -161,7 +161,9 @@ public class TestLoanTable {
 		
 		//test for success
 		assertEquals("success", loanTable.renewal(loanTable.loanList.get(3).getUserid(), loanTable.loanList.get(3).getIsbn(), loanTable.loanList.get(3).getCopynumber(), date));
-		
+		System.out.println(loanTable.loanList.get(3).getUserid());
+		System.out.println(loanTable.loanList.get(3).getIsbn());
+		System.out.println(loanTable.loanList.get(3).getCopynumber());
 		
 	}
 	
