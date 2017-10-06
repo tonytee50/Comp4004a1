@@ -53,5 +53,17 @@ public class TestOutputHandler {
 		assertEquals(out2.toString(), outputHand.createItem("9781442668584").toString());
 		
 	}
+	
+	@Test
+	public void testDeleteUser() {
+		Output out = new Output("Your input should in this format:'useremail'", 7);
+		assertEquals(out.toString(), outputHand.deleteUser("tonytamer").toString());
+		
+		Output out1 = new Output("Success!", 2);
+		assertEquals(out1.toString(), outputHand.deleteUser("tony.tamer@carleton.ca").toString());
+		
+		Output out2 = new Output("The User Does Not Exist!", 7);
+		assertEquals(out2.toString(), outputHand.deleteUser("tony.tamer111@carleton.ca").toString());
+	}
 
 }
