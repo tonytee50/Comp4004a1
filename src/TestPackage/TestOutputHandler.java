@@ -2,12 +2,16 @@ package TestPackage;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.handler.OutputHandler;
 import server.logic.handler.model.Output;
+import server.logic.model.Loan;
+import server.logic.tables.LoanTable;
 
 public class TestOutputHandler {
 	
@@ -107,14 +111,20 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testReniew() {
+		
+		Date date = new Date();
+		Loan myLoan = new Loan(3, "2343234323432", "1", date, "0");
+		LoanTable loanTable = LoanTable.getInstance();
+		loanTable.loanList.add(myLoan);
+		
 		Output out = new Output("Your input should be in this format:'useremail,ISBN,copynumber'", 11);
 		assertEquals(out.toString(), outputHand.renew("tony.tamercarleton.ca,123,1").toString());
 		
 		Output out1 = new Output("The User Does Not Exist!", 11);
 		assertEquals(out1.toString(), outputHand.renew("tony.tamer@111carleton.ca,1234321456784,1").toString());
 		
-		Output out2 = new Output("Outstanding Fee Exists!", 3);
-		assertEquals(out2.toString(), outputHand.renew("Zhibo@carleton.ca,9781442668584,1").toString());
+		Output out2 = new Output("Success!", 3);
+		assertEquals(out2.toString(), outputHand.renew("Kevin@carleton.ca,2343234323432,1").toString());
 		
 	}
 
