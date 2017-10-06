@@ -31,5 +31,14 @@ public class TestOutputHandler {
 		Output out2 = new Output("The User Already Exists!", 2);
 		assertEquals(out2.toString(), outputHand.createUser("tony.tamer@carleton.ca, MyPass").toString());
 	}
+	
+	@Test
+	public void testIsInteger() {
+		//This is meant to make sure ISBN is 13 digits long
+		assertTrue(OutputHandler.isInteger("1243212345676"));
+		assertFalse(OutputHandler.isInteger("123456789"));
+		assertFalse(OutputHandler.isInteger("1234567823414312439"));
+		assertFalse(OutputHandler.isInteger("000000000000000"));
+	}
 
 }
