@@ -24,7 +24,7 @@ public class TestOutputHandler {
 
 	@Test
 	public void testCreateUser() {
-		Output out = new Output("Your input should in this format:'username,password'", 4);
+		Output out = new Output("Your input should be in this format:'username,password'", 4);
 		assertEquals(out.toString(), outputHand.createUser("Antony,password").toString());
 		Output out1 = new Output("Success!", 2);
 		assertEquals(out1.toString(), outputHand.createUser("tony.tamer@carleton.ca, MyPass").toString());
@@ -43,7 +43,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testCreateItem() {
-		Output out = new Output("Your input should in this format:'ISBN',ISBN should be a 13-digit number", 6);
+		Output out = new Output("Your input should be in this format:'ISBN',ISBN should be a 13-digit number", 6);
 		assertEquals(out.toString(), outputHand.createItem("123456789123456").toString());
 		
 		Output out1 = new Output("The Title Does Not Exists!", 2);
@@ -56,7 +56,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testDeleteUser() {
-		Output out = new Output("Your input should in this format:'useremail'", 7);
+		Output out = new Output("Your input should be in this format:'useremail'", 7);
 		assertEquals(out.toString(), outputHand.deleteUser("tonytamer").toString());
 		
 		Output out1 = new Output("Success!", 2);
@@ -64,6 +64,18 @@ public class TestOutputHandler {
 		
 		Output out2 = new Output("The User Does Not Exist!", 7);
 		assertEquals(out2.toString(), outputHand.deleteUser("tony.tamer111@carleton.ca").toString());
+	}
+	
+	@Test
+	public void testDeleteTitle() {
+		Output out = new Output("Your input should be in this format:'ISBN',ISBN should be a 13-digit number", 8);
+		assertEquals(out.toString(), outputHand.deleteTitle("1234").toString());
+		
+		Output out1 = new Output("The Title Does Not Exist!", 2);
+		assertEquals(out1.toString(), outputHand.deleteTitle("1234123456789").toString());
+		
+		Output out2 = new Output("Success!", 2);
+		assertEquals(out2.toString(), outputHand.deleteTitle("9781442616899").toString());
 	}
 
 }

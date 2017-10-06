@@ -35,7 +35,7 @@ public class OutputHandler {
         boolean email=strArray[0].contains("@");
         Object result="";
         if(strArray.length!=2 || email!=true){
-        	output.setOutput("Your input should in this format:'username,password'");
+        	output.setOutput("Your input should be in this format:'username,password'");
         	output.setState(CREATEUSER);
         }else{
         	result=UserTable.getInstance().createuser(strArray[0], strArray[1]);
@@ -69,7 +69,7 @@ public class OutputHandler {
         boolean number=isInteger(strArray[0]);
         Object result="";
         if(strArray.length!=1 || number!=true){
-        	output.setOutput("Your input should in this format:'ISBN',ISBN should be a 13-digit number");
+        	output.setOutput("Your input should be in this format:'ISBN',ISBN should be a 13-digit number");
         	output.setState(CREATEITEM);
         }else{
         	result=ItemTable.getInstance().createitem(strArray[0]);
@@ -91,13 +91,34 @@ public class OutputHandler {
         boolean email=strArray[0].contains("@");
         Object result="";
         if(strArray.length!=1 || email!=true){
-        	output.setOutput("Your input should in this format:'useremail'");
+        	output.setOutput("Your input should be in this format:'useremail'");
         	output.setState(DELETEUSER);
         }else if(userid==-1){
         	output.setOutput("The User Does Not Exist!");
         	output.setState(DELETEUSER);
         }else{
         	result=UserTable.getInstance().delete(userid);
+        	if(result.equals("success")){
+        		output.setOutput("Success!");
+        	}else{
+        		output.setOutput(result+"!");
+        	}
+        	output.setState(CLERK);
+        }
+		return output;
+	}
+	
+	public Output deleteTitle(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean number=isInteger(strArray[0]);
+        Object result="";
+        if(strArray.length!=1 || number!=true){
+        	output.setOutput("Your input should be in this format:'ISBN',ISBN should be a 13-digit number");
+        	output.setState(DELETETITLE);
+        }else{
+        	result=TitleTable.getInstance().delete(strArray[0]);
         	if(result.equals("success")){
         		output.setOutput("Success!");
         	}else{
