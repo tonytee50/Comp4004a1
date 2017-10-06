@@ -2,12 +2,15 @@ package TestPackage;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.model.Fee;
 import server.logic.tables.FeeTable;
+import server.logic.tables.LoanTable;
 
 public class TestFeeTable {
 
@@ -101,6 +104,15 @@ public class TestFeeTable {
 		//now make sure it didn't apply the fee when it wasn't supposed to
 		assertEquals(3, newFee.feeList.get(1).getFee());
 		
+	}
+	
+	@Test
+	public void testInitialization() {
+		Date date = new Date();
+		LoanTable loan = LoanTable.getInstance();
+		loan.createloan(4, "9781611687910", "1", date);
+		newFee.Initialization();
+		assertEquals(3, newFee.feeList.size());
 	}
 	
 }

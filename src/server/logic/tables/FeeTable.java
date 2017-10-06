@@ -1,8 +1,10 @@
 package server.logic.tables;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import server.logic.model.Fee;
+import server.logic.model.Loan;
 import utilities.Config;
 
 public class FeeTable {
@@ -16,6 +18,7 @@ public class FeeTable {
     	Fee fee1=new Fee(1,3);
     	feeList.add(fee);
     	feeList.add(fee1);
+    	Initialization();
     };
     
 	public boolean checkuser(int j) {
@@ -138,9 +141,14 @@ public class FeeTable {
 				Fee fee=new Fee(j,0);
 				feeList.add(fee);
 			}
-		}
-		
-		
+		}	
+	}
+	
+	public void Initialization(){
+    	List<Loan> loanList=LoanTable.getInstance().getLoanTable();
+    	for(int i=0;i<loanList.size();i++) {
+    		applyfee(loanList.get(i).getUserid(), new Date().getTime()-loanList.get(i).getDate().getTime());
+    	}
 	}
 	
 }
