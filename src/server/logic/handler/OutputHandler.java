@@ -60,5 +60,28 @@ public class OutputHandler {
 			isNumber=false;
 		}
 		return isNumber;
-		 }
+	}
+	
+	public Output createItem(String input) {
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        boolean number=isInteger(strArray[0]);
+        Object result="";
+        if(strArray.length!=1 || number!=true){
+        	output.setOutput("Your input should in this format:'ISBN',ISBN should be a 13-digit number");
+        	output.setState(CREATEITEM);
+        }else{
+        	result=ItemTable.getInstance().createitem(strArray[0]);
+        	if(result.equals(true)){
+        		output.setOutput("Success!");
+        	}else{
+        		output.setOutput("The Title Does Not Exists!");
+        	}
+        	output.setState(CLERK);
+        }
+		return output;
+	}
+	
+	
 }

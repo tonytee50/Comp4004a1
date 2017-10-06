@@ -40,5 +40,18 @@ public class TestOutputHandler {
 		assertFalse(OutputHandler.isInteger("1234567823414312439"));
 		assertFalse(OutputHandler.isInteger("000000000000000"));
 	}
+	
+	@Test
+	public void testCreateItem() {
+		Output out = new Output("Your input should in this format:'ISBN',ISBN should be a 13-digit number", 6);
+		assertEquals(out.toString(), outputHand.createItem("123456789123456").toString());
+		
+		Output out1 = new Output("The Title Does Not Exists!", 2);
+		assertEquals(out1.toString(), outputHand.createItem("1234567891234").toString());
+		
+		Output out2 = new Output("Success!", 2);
+		assertEquals(out2.toString(), outputHand.createItem("9781442668584").toString());
+		
+	}
 
 }
