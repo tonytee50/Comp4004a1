@@ -84,5 +84,15 @@ public class TestOutputHandler {
 		assertTrue(outputHand.isNumber("123453"));
 		assertFalse(outputHand.isNumber("12312a32"));
 	}
+	
+	@Test
+	public void testDeleteItem() {
+		Output out = new Output("Your input should in this format:'ISBN,copynumber',ISBN should be a 13-digit number", 9);
+		assertEquals(out.toString(), outputHand.deleteItem("Hello mates!").toString());
+		assertEquals(out.toString(), outputHand.deleteItem("1,1234312345678").toString());
+		
+		Output out1 = new Output("Success!", 2);
+		assertEquals(out1.toString(), outputHand.deleteItem("9781442667181,1").toString());
+	}
 
 }
