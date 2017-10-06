@@ -94,5 +94,15 @@ public class TestOutputHandler {
 		Output out1 = new Output("Success!", 2);
 		assertEquals(out1.toString(), outputHand.deleteItem("9781442667181,1").toString());
 	}
+	
+	@Test
+	public void testborrow() {
+		Output out = new Output("Your input should in this format:'useremail,ISBN,copynumber'", 10);
+		assertEquals(out.toString(), outputHand.borrow("1234,vdsdsf,1").toString());
+		
+		Output out1 = new Output("The User Does Not Exist!", 10);
+		assertEquals(out1.toString(), outputHand.borrow("tony.tamer@carleton.ca,123,1").toString());
+		
+	}
 
 }
