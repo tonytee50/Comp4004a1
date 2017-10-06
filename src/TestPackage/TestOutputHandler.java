@@ -77,5 +77,12 @@ public class TestOutputHandler {
 		Output out2 = new Output("Success!", 2);
 		assertEquals(out2.toString(), outputHand.deleteTitle("9781442616899").toString());
 	}
+	
+	@Test
+	public void testisNumber() {
+		assertFalse(outputHand.isNumber("abfdr5"));
+		assertTrue(outputHand.isNumber("123453"));
+		assertFalse(outputHand.isNumber("12312a32"));
+	}
 
 }

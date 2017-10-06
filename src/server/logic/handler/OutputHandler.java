@@ -129,4 +129,17 @@ public class OutputHandler {
 		return output;
 	}
 	
+	public boolean isNumber(String value) {
+		char[] ch = value.toCharArray();
+		boolean isNumber=true;
+		for (int i = 0; i < ch.length; i++) {
+			isNumber = Character.isDigit(ch[i]);
+			if(!isNumber) {
+				break;
+			}
+		}
+		return isNumber;
+	}
+	
+	
 }
