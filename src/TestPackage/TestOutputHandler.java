@@ -149,5 +149,14 @@ public class TestOutputHandler {
 		Output out2 = new Output("Success!", 3);
 		assertEquals(out2.toString(), outputHand.payFine("Yu@carleton.ca").toString());
 	}
+	
+	@Test
+	public void testClerkLogin() {
+		Output out = new Output("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.", 2);
+		assertEquals(out.toString(), outputHand.clerkLogin("admin").toString());
+		
+		Output out1 = new Output("Wrong Password!Please Input The Password:", 14);
+		assertEquals(out1.toString(), outputHand.clerkLogin("NotAdmin").toString());
+	}
 
 }
