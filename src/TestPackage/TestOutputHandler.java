@@ -137,5 +137,17 @@ public class TestOutputHandler {
 		assertEquals(out2.toString(), outputHand.returnBook("Zhibo@carleton.ca,9781442668584,1").toString());
 		
 	}
+	
+	@Test
+	public void testPayFine() {
+		Output out = new Output("Your input should be in this format:'useremail'", 13);
+		assertEquals(out.toString(), outputHand.payFine("tonytamer,1234321234321,1").toString());
+		
+		Output out1 = new Output("The User Does Not Exist!", 13);
+		assertEquals(out1.toString(), outputHand.payFine("tony.fake@carleton.ca").toString());
+		
+		Output out2 = new Output("Success!", 3);
+		assertEquals(out2.toString(), outputHand.payFine("Yu@carleton.ca").toString());
+	}
 
 }
