@@ -31,5 +31,17 @@ public class TestServerOutput {
 	public void testGetState() {
 		assertEquals(0, output.getState());
 	}
+	
+	@Test
+	public void testSetOutput() {
+		output.setOutput("New Output");
+		assertEquals("New Output", output.getOutput());
+	}
+	
+	@Test
+	public void testSetState() {
+		output.setState(1);;
+		assertEquals(1, output.getState());
+	}
 
 }

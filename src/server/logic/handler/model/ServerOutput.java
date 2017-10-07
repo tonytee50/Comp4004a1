@@ -11,8 +11,15 @@ public class ServerOutput {
 	public String getOutput() {
 		return output;
 	}
+	public void setOutput(String output) {
+		this.output = output;
+	}
 	public int getState() {
 		return state;
 	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	
 
 }
