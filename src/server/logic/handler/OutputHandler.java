@@ -77,6 +77,7 @@ public class OutputHandler {
         		output.setOutput("Success!");
         	}else{
         		output.setOutput("The Title Already Exists!");
+        		
         	}
         	output.setState(CLERK);
         }
@@ -96,10 +97,11 @@ public class OutputHandler {
         	result=ItemTable.getInstance().createitem(strArray[0]);
         	if(result.equals(true)){
         		output.setOutput("Success!");
+        		output.setState(CLERK);
         	}else{
-        		output.setOutput("The Title Does Not Exists!");
+        		output.setOutput("The Title Does Not Exists!\nPlease add it!");
+        		output.setState(CREATETITLE);
         	}
-        	output.setState(CLERK);
         }
 		return output;
 	}
@@ -201,7 +203,7 @@ public class OutputHandler {
         	output.setState(BORROW);
         }else if(userid==-1){
         	output.setOutput("The User Does Not Exist!");
-        	output.setState(BORROW);
+        	output.setState(USER);
         }else{
         	boolean ISBN=isInteger(strArray[1]);
         	boolean copynumber=isNumber(strArray[2]);
@@ -315,7 +317,7 @@ public class OutputHandler {
 	public Output clerkLogin(String input) {
 		Output output=new Output("",0);
 		if(input.equalsIgnoreCase(Config.CLERK_PASSWORD)){
-			output.setOutput("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.");
+			output.setOutput("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.");
         	output.setState(CLERK);
 		}else{
 			output.setOutput("Wrong Password!Please Input The Password:");

@@ -52,7 +52,7 @@ public class TestTitleTable {
     	
     	System.out.println(titleLister);
     	System.out.println(titleTable1.getTitleTable());
-		assertEquals(5, titleTable1.getTitleTable().size());
+		assertEquals(6, titleTable1.getTitleTable().size());
 	}
 	
 	@Test

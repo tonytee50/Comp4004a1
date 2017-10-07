@@ -50,7 +50,7 @@ public class TestOutputHandler {
 		Output out = new Output("Your input should be in this format:'ISBN',ISBN should be a 13-digit number", 6);
 		assertEquals(out.toString(), outputHand.createItem("123456789123456").toString());
 		
-		Output out1 = new Output("The Title Does Not Exists!", 2);
+		Output out1 = new Output("The Title Does Not Exists!\nPlease add it!", 5);
 		assertEquals(out1.toString(), outputHand.createItem("1234567891234").toString());
 		
 		Output out2 = new Output("Success!", 2);
@@ -104,7 +104,7 @@ public class TestOutputHandler {
 		Output out = new Output("Your input should be in this format:'useremail,ISBN,copynumber'", 10);
 		assertEquals(out.toString(), outputHand.borrow("1234,vdsdsf,1").toString());
 		
-		Output out1 = new Output("The User Does Not Exist!", 10);
+		Output out1 = new Output("The User Does Not Exist!", 3);
 		assertEquals(out1.toString(), outputHand.borrow("tony.tamer@carleton.ca,123,1").toString());
 		
 	}
@@ -152,7 +152,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testClerkLogin() {
-		Output out = new Output("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.", 2);
+		Output out = new Output("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.", 2);
 		assertEquals(out.toString(), outputHand.clerkLogin("admin").toString());
 		
 		Output out1 = new Output("Wrong Password!Please Input The Password:", 14);
