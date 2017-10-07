@@ -127,5 +127,15 @@ public class TestOutputHandler {
 		assertEquals(out2.toString(), outputHand.renew("Kevin@carleton.ca,2343234323432,1").toString());
 		
 	}
+	
+	@Test
+	public void testReturnBook() {
+		Output out = new Output("Your input should be in this format:'useremail,ISBN,copynumber'", 12);
+		assertEquals(out.toString(), outputHand.returnBook("tonytamer,1234321234321,1").toString());
+		
+		Output out2 = new Output("Success!", 3);
+		assertEquals(out2.toString(), outputHand.returnBook("Zhibo@carleton.ca,9781442668584,1").toString());
+		
+	}
 
 }
