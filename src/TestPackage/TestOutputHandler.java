@@ -173,5 +173,18 @@ public class TestOutputHandler {
 		Output out3 = new Output("The User Does Not Exist!Please The Username and Password:'username,password'", 15);
 		assertEquals(out3.toString(), outputHand.userLogin("Zhibozzz@carleton.ca,Zhibo").toString());
 	}
+	
+	@Test
+	public void testCreateTitle() {
+		Output out = new Output("Your input should be in this format:'ISBN,title',ISBN should be a 13-digit number", 5);
+		assertEquals(out.toString(), outputHand.createTitle("123,title").toString());
+		
+		Output out1 = new Output("Success!", 2);
+		assertEquals(out1.toString(), outputHand.createTitle("1222222221113, THe Title").toString());
+		
+		Output out2 = new Output("The Title Already Exists!", 2);
+		assertEquals(out2.toString(), outputHand.createTitle("1222222221113, THe Title").toString());
+		
+	}
 
 }
