@@ -99,17 +99,12 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	            }else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
-	            }else if(input.equalsIgnoreCase("borrow")) {
-	            	output = "Please Input User Info:'useremail,ISBN,copynumber'";
-	            	state=BORROW;
-	            	oo.setOutput(output);
-		            oo.setState(state);
 	        	}else{
-	            	output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	            	output = "Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -159,7 +154,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -177,7 +172,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -195,7 +190,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -213,7 +208,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -231,7 +226,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
@@ -249,7 +244,7 @@ public class InputHandler {
 	                oo.setOutput(output);
 		            oo.setState(state);
 	        	}else if(input.equalsIgnoreCase("main menu")){
-	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.";
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
