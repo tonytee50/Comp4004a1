@@ -31,9 +31,11 @@ public class MonitorSystem {
 		
 	}
 	
-//	public static void main(String [] args) {
-//		MonitorSystem sys = new MonitorSystem();
-//		sys.userDisplay();
-//	}
+	public String display() {
+		String result = "";
+		result = titleDisplay() + userDisplay();
+		return result;
+	}
+
 
 }
