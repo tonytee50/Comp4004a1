@@ -26,5 +26,11 @@ public class TestMonitorSystem {
 		assertEquals("[9781442668584,By the grace of God]\n[9781442616899,Dante's lyric poetry ]\n[9781442667181,Courtesy lost]\n[9781611687910,Writing for justice]\n[9781317594277,The act in context]\n[1234567890123,The new Title]\n", sys.titleDisplay());
 		assertNotNull(sys.titleDisplay());
 	}
+	
+	@Test
+	public void testUserDisplay() {
+		assertEquals("[0,Zhibo@carleton.ca,Zhibo]\n[1,Yu@carleton.ca,Yu]\n[2,Michelle@carleton.ca,Michelle]\n[3,Kevin@carleton.ca,Kevin]\n[4,Sun@carleton.ca,Sun]\n", sys.userDisplay());
+		assertNotNull(sys.userDisplay());
+	}
 
 }

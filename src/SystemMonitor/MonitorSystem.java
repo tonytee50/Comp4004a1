@@ -1,6 +1,7 @@
 package SystemMonitor;
 
 import server.logic.tables.TitleTable;
+import server.logic.tables.UserTable;
 
 
 public class MonitorSystem {
@@ -17,14 +18,22 @@ public class MonitorSystem {
 		return result;
 	}
 	
-//	public void display() {
-//		UserTable users = UserTable.getInstance();
-//		
-//	}
+	public String userDisplay() {
+		UserTable users = UserTable.getInstance();
+		String result = "";
+		System.out.println("Here is a list of all users:");
+		for(int i = 0; i<users.userList.size(); i++) {
+//			System.out.println(titles.titleList.get(i).toString());
+			result = result + users.userList.get(i).toString() + "\n";
+		}
+		System.out.println(result);
+		return result;
+		
+	}
 	
 //	public static void main(String [] args) {
 //		MonitorSystem sys = new MonitorSystem();
-//		sys.titleDisplay();
+//		sys.userDisplay();
 //	}
 
 }
