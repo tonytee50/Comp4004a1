@@ -2,6 +2,7 @@ package server.logic.handler;
 
 import java.util.Date;
 
+import SystemMonitor.MonitorSystem;
 import server.logic.handler.model.Output;
 import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
@@ -27,6 +28,7 @@ public class OutputHandler {
     public static final int PAYFINE=13;
     public static final int CLERKLOGIN=14;
     public static final int USERLOGIN=15;
+    public static final int SYSTEMMONITOR = 16;
 
 	public Output createUser(String input) {
 		Output output=new Output("",0);
@@ -348,6 +350,16 @@ public class OutputHandler {
             	output.setState(USERLOGIN);
         	}
         }
+		return output;
+	}
+	
+	public Output systemMonitor() {
+
+		Output output=new Output("",0);
+		MonitorSystem printer = new MonitorSystem();
+		String toDisplay = printer.display();
+		output.setOutput(toDisplay);
+		output.setState(CLERK);
 		return output;
 	}
 	

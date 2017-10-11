@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.model.User;
-import server.logic.tables.TitleTable;
 import server.logic.tables.UserTable;
 
 public class TestUserTable {

@@ -45,8 +45,8 @@ public class TestFeeTable {
 	@Test
 	public void testGetInstance() {
 		//test getInstance
-		assertEquals(newFee.getInstance(), newFee2.getInstance());
-		assertEquals(FeeTable.getInstance(), newFee2.getInstance());
+		assertEquals(FeeTable.getInstance(), FeeTable.getInstance());
+		assertEquals(FeeTable.getInstance(), FeeTable.getInstance());
 		assertNotNull(FeeTable.getInstance());
 	}
 	

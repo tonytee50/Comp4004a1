@@ -20,6 +20,7 @@ public class InputHandler {
     public static final int PAYFINE=13;
     public static final int CLERKLOGIN=14;
     public static final int USERLOGIN=15;
+    public static final int SYSTEMMONITOR = 16;
     
     OutputHandler outputHandler=new OutputHandler();
 
@@ -63,7 +64,10 @@ public class InputHandler {
         		oo.setOutput(output);
 	            oo.setState(state);
 	        }else if (state==CLERK){
-	        	if (input.equalsIgnoreCase("create user")) {
+	        	if(input.equalsIgnoreCase("system monitor")) {
+	        		state = SYSTEMMONITOR;
+	        		oo.setState(state);
+	        	}else if (input.equalsIgnoreCase("create user")) {
 	            	output = "Please Input User Info:'username,password'";
 	            	state=CREATEUSER;
 	            	oo.setOutput(output);

@@ -11,10 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.model.Loan;
-import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
-import server.logic.tables.TitleTable;
 import server.logic.tables.UserTable;
 
 public class TestLoanTable {
@@ -56,7 +54,7 @@ public class TestLoanTable {
 	@Test
 	public void testInstance() {
 		//test getInstance method
-		assertEquals(loanTable.getInstance(), loanTable2.getInstance());
+		assertEquals(LoanTable.getInstance(), LoanTable.getInstance());
 		assertEquals(LoanTable.getInstance(), LoanTable.getInstance());
 	}
 	
@@ -132,9 +130,7 @@ public class TestLoanTable {
 	public void testCreateLoan() {
 		//test the different cases
 		UserTable userTable = UserTable.getInstance();
-		TitleTable titleTable = TitleTable.getInstance();
 		ItemTable itemTable = ItemTable.getInstance();
-		FeeTable feeTable = FeeTable.getInstance();
 		
 		for(int i = 0; i<userTable.userList.size(); i++) {
 			assertEquals("User Invalid", loanTable.createloan(userTable.userList.get(i).getUserid()+100, "", "", date));

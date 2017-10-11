@@ -3,13 +3,9 @@ package TestPackage;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
-import java.util.List;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import server.logic.model.Fee;
 import server.logic.model.Item;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
@@ -38,7 +34,7 @@ public class TestItemTable {
 	@Test
 	public void testInstance() {
 		//test getInstance method
-		assertEquals(itemTable1.getInstance(), itemTable2.getInstance());
+		assertEquals(ItemTable.getInstance(), ItemTable.getInstance());
 		assertEquals(ItemTable.getInstance(), ItemTable.getInstance());
 	}
 	

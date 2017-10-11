@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import server.logic.handler.InputHandler;
-import server.logic.handler.model.ServerOutput;
 
 public class TestInputHandler {
 	
