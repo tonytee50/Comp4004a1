@@ -10,27 +10,24 @@ import server.logic.handler.InputHandler;
 import server.logic.handler.OutputHandler;
 import server.logic.handler.model.Output;
 import server.logic.handler.model.ServerOutput;
-import server.logic.model.User;
 import utilities.Config;
 
-public class TestAddUser {
-	public static final String INPUT = "clerk";
-	public static final String CREATEUSER = "create user";
-//	public static final String CLERK_PASSWORD = "admin";
-//	public static final int FINISHWAITING=1;
-//	public static final int CREATEUSER=4;
-	
+public class TestAddTitle {
+	public static String INPUT;
+	public static String CREATETITLE;
 	
 	@Before
 	public void setUp() throws Exception {
+		INPUT = "clerk";
+		CREATETITLE  = "create title";
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
 	@Test
-	public void testAddUserSuccess() {
+	public void testAddTitleSuccess() {
 		InputHandler input = new InputHandler();
 		ServerOutput out = new ServerOutput("", 0);
 		OutputHandler output = new OutputHandler();
@@ -45,30 +42,29 @@ public class TestAddUser {
 		if(out.getState() == InputHandler.CLERKLOGIN) {
 			output1 = output.clerkLogin(Config.CLERK_PASSWORD);
 			if(output1.getState() == OutputHandler.CLERK) {
-				out = input.processInput(CREATEUSER, output1.getState());
+				out = input.processInput(CREATETITLE, output1.getState());
 			}else{
 				fail("");
 			}
 			System.out.println(out.getOutput());
 			System.out.println(output1.getState());
 		
-			if(out.getState() == InputHandler.CREATEUSER && out.getOutput() != null) {
-				output1 = output.createUser("tony.tamer@carleton.ca,thePass");
-			}else{
-				fail("You did not select to create a user");
+			if(out.getState() == InputHandler.CREATETITLE && out.getOutput() != null) {
+				output1 = output.createTitle("1222111444554,The COMP 4004");
 			}
 			assertEquals("Success!", output1.getOutput());
 		}
-	
 	}
 	
-	
-	
 	@Test
-	public void testAddUserWrongEmail() {
+	public void testAddTitleThatAlreadyExists() {
 		InputHandler input = new InputHandler();
 		ServerOutput out = new ServerOutput("", 0);
 		OutputHandler output = new OutputHandler();
+		
+		if(input.processInput("", InputHandler.WAITING) == null) {
+			fail("");
+		}
 		
 		out = input.processInput(INPUT, InputHandler.FINISHWAITING);
 		Output output1;
@@ -76,25 +72,29 @@ public class TestAddUser {
 		if(out.getState() == InputHandler.CLERKLOGIN) {
 			output1 = output.clerkLogin(Config.CLERK_PASSWORD);
 			if(output1.getState() == OutputHandler.CLERK) {
-				out = input.processInput(CREATEUSER, output1.getState());
+				out = input.processInput(CREATETITLE, output1.getState());
 			}else{
 				fail("");
 			}
 			System.out.println(out.getOutput());
 			System.out.println(output1.getState());
 		
-			if(out.getState() == InputHandler.CREATEUSER && out.getOutput() != null) {
-				output1 = output.createUser("tony.tamercarleton.ca,thePass");
+			if(out.getState() == InputHandler.CREATETITLE && out.getOutput() != null) {
+				output1 = output.createTitle("9781442668584,The Volcanoes");
 			}
-			assertEquals("Your input should be in this format:'username,password'", output1.getOutput());
-		}	
+			assertEquals("The Title Already Exists!", output1.getOutput());
+		}
 	}
 	
 	@Test
-	public void testAddUserAlreadyExists() {
+	public void testAddTitleIncorrectly() {
 		InputHandler input = new InputHandler();
 		ServerOutput out = new ServerOutput("", 0);
 		OutputHandler output = new OutputHandler();
+		
+		if(input.processInput("", InputHandler.WAITING) == null) {
+			fail("");
+		}
 		
 		out = input.processInput(INPUT, InputHandler.FINISHWAITING);
 		Output output1;
@@ -102,19 +102,18 @@ public class TestAddUser {
 		if(out.getState() == InputHandler.CLERKLOGIN) {
 			output1 = output.clerkLogin(Config.CLERK_PASSWORD);
 			if(output1.getState() == OutputHandler.CLERK) {
-				out = input.processInput(CREATEUSER, output1.getState());
+				out = input.processInput(CREATETITLE, output1.getState());
 			}else{
 				fail("");
 			}
 			System.out.println(out.getOutput());
 			System.out.println(output1.getState());
 		
-			if(out.getState() == InputHandler.CREATEUSER && out.getOutput() != null) {
-				output1 = output.createUser("tony.tamer@carleton.ca,thePass");
+			if(out.getState() == InputHandler.CREATETITLE && out.getOutput() != null) {
+				output1 = output.createTitle("The Good Man,1234324565431");
 			}
-			assertEquals("The User Already Exists!", output1.getOutput());
-		}	
+			assertEquals("Your input should be in this format:'ISBN,title',ISBN should be a 13-digit number", output1.getOutput());
+		}
 	}
-	
-	
+
 }
