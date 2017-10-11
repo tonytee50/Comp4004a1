@@ -5638,4 +5638,113 @@
 @2017-10-09 18:04:31 INFO  String:210 - Operation:Borrow Item;Loan Info:[1,9781442616899,1,2017-10-09 06:04:31];State:Fail;Reason:Outstanding Fee Exists.
 @2017-10-09 18:04:31 INFO  String:204 - Operation:Borrow Item;Loan Info:[2,9781442616899,1,2017-10-09 06:04:31];State:Success
 @2017-10-09 18:04:31 INFO  String:194 - Operation:Borrow Item;Loan Info:[3,9781442616889,1,2017-10-09 06:04:31];State:Fail;Reason:Invalid ISBN.
+@2017-10-09 18:21:03 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:21:03 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:21:03,0]]
+@2017-10-09 18:21:03 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:21:03 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:21:03 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:21:55 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:21:55 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:21:55,0]]
+@2017-10-09 18:21:55 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:21:55 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:21:55 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:23:23 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:23:23 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:23:23,0]]
+@2017-10-09 18:23:23 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:23:23 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:23:23 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:24:02 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:24:02 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:24:02,0]]
+@2017-10-09 18:24:02 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:24:02 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:24:02 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:24:18 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:24:18 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:24:18,0]]
+@2017-10-09 18:24:18 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:24:18 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:24:18 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:26:12 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:26:12 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:26:12,0]]
+@2017-10-09 18:26:12 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:26:12 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:26:12 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:26:26 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:26:26 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:26:26,0]]
+@2017-10-09 18:26:26 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:26:26 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:26:26 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:27:35 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:27:35 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:27:35,0]]
+@2017-10-09 18:27:35 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:27:35 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:27:35 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:28:38 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:28:38 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:28:38,0]]
+@2017-10-09 18:28:38 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:28:38 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:28:38 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:28:52 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:28:52 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:28:52,0]]
+@2017-10-09 18:28:52 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:28:52 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:28:52 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:29:02 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:29:02 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:29:02,0]]
+@2017-10-09 18:29:02 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:29:02 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:29:02 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:29:44 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:29:44 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:29:44,0]]
+@2017-10-09 18:29:44 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:29:44 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:29:44 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:29:44 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:30:04 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:30:04 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:30:04,0]]
+@2017-10-09 18:30:04 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:30:04 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:30:04 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:30:04 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:31:22 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:31:22 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:31:22,0]]
+@2017-10-09 18:31:22 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:31:22 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:31:22 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:31:22 INFO  String:117 - Operation:Pay Fine;Fee Info:[2,0];State:Success
+@2017-10-09 18:31:23 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:32:10 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:32:10 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:32:10,0]]
+@2017-10-09 18:32:10 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:32:10 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:32:10 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:32:10 INFO  String:117 - Operation:Pay Fine;Fee Info:[4,0];State:Success
+@2017-10-09 18:32:10 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:32:50 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:32:50 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:32:50,0]]
+@2017-10-09 18:32:50 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:32:50 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:32:50 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:32:50 INFO  String:117 - Operation:Pay Fine;Fee Info:[3,0];State:Success
+@2017-10-09 18:32:50 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:33:17 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:33:17 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:33:17,0]]
+@2017-10-09 18:33:17 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:33:17 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:33:17 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:33:17 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:33:17 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,0];State:Success
+@2017-10-09 18:33:49 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-09 18:33:49 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:33:49,0]]
+@2017-10-09 18:33:49 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:33:49 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:33:49 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:33:49 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:33:49 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,0];State:Success
+@2017-10-09 18:35:32 INFO  String:27 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun], [5,Tommy@carleton.ca,Tommy]]
+@2017-10-09 18:35:32 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:35:32,0]]
+@2017-10-09 18:35:32 INFO  String:141 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-09 18:35:32 INFO  String:161 - Operation:Initialize FeeTable;FeeTable: [[0,5], [1,3]]
+@2017-10-09 18:35:32 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-09 18:35:32 INFO  String:117 - Operation:Pay Fine;Fee Info:[5,0];State:Success
+@2017-10-09 18:35:32 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
 @

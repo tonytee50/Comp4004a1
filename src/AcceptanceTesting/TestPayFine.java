@@ -11,10 +11,9 @@ import server.logic.handler.OutputHandler;
 import server.logic.handler.model.Output;
 import server.logic.handler.model.ServerOutput;
 
-
-public class TestBorrow {
+public class TestPayFine {
 	public static final String INPUT = "user";
-	public static final String BORROW = "borrow";
+	public static final String PAYFINE = "pay fine";
 
 	@Before
 	public void setUp() throws Exception {
@@ -25,39 +24,7 @@ public class TestBorrow {
 	}
 
 	@Test
-	public void testBorrowBookSuccessfully() {
-		InputHandler input = new InputHandler();
-		ServerOutput out = new ServerOutput("", 0);
-		OutputHandler output = new OutputHandler();
-		
-		if(input.processInput("", InputHandler.WAITING) == null) {
-			fail("");
-		}
-		
-		out = input.processInput(INPUT, InputHandler.FINISHWAITING);
-		Output output1;
-		
-		if(out.getState() == InputHandler.USERLOGIN) {
-			output1 = output.userLogin("Michelle@carleton.ca,Michelle");
-			if(output1.getState() == OutputHandler.USER) {
-				out = input.processInput(BORROW, output1.getState());
-			}else{
-				fail("");
-			}
-			System.out.println(out.getOutput());
-			System.out.println(output1.getState());
-		
-			if(out.getState() == InputHandler.BORROW && out.getOutput() != null) {
-				output1 = output.borrow("Michelle@carleton.ca,9781442616899,1");
-			}else{
-				fail("You did not select to create a user");
-			}
-			assertEquals("Success!", output1.getOutput());
-		}
-	}
-	
-	@Test
-	public void testBorrowWithOutstandingFees() {
+	public void testSuccess() {
 		InputHandler input = new InputHandler();
 		ServerOutput out = new ServerOutput("", 0);
 		OutputHandler output = new OutputHandler();
@@ -72,24 +39,25 @@ public class TestBorrow {
 		if(out.getState() == InputHandler.USERLOGIN) {
 			output1 = output.userLogin("Yu@carleton.ca,Yu");
 			if(output1.getState() == OutputHandler.USER) {
-				out = input.processInput(BORROW, output1.getState());
+				out = input.processInput(PAYFINE, output1.getState());
 			}else{
 				fail("");
 			}
 			System.out.println(out.getOutput());
 			System.out.println(output1.getState());
 		
-			if(out.getState() == InputHandler.BORROW && out.getOutput() != null) {
-				output1 = output.borrow("Yu@carleton.ca,9781442616899,1");
+			if(out.getState() == InputHandler.PAYFINE && out.getOutput() != null) {
+				output1 = output.payFine("Yu@carleton.ca");
 			}else{
 				fail("You did not select to create a user");
 			}
-			assertEquals("Outstanding Fee Exists!", output1.getOutput());
+			assertEquals("Success!", output1.getOutput());
 		}
+		
 	}
 	
 	@Test
-	public void BorrowItemThatDoesntExist() {
+	public void testWhenUserBorrowingItem() {
 		InputHandler input = new InputHandler();
 		ServerOutput out = new ServerOutput("", 0);
 		OutputHandler output = new OutputHandler();
@@ -102,22 +70,21 @@ public class TestBorrow {
 		Output output1;
 		
 		if(out.getState() == InputHandler.USERLOGIN) {
-			output1 = output.userLogin("Kevin@carleton.ca,Kevin");
+			output1 = output.userLogin("Zhibo@carleton.ca,Zhibo");
 			if(output1.getState() == OutputHandler.USER) {
-				out = input.processInput(BORROW, output1.getState());
+				out = input.processInput(PAYFINE, output1.getState());
 			}else{
 				fail("");
 			}
 			System.out.println(out.getOutput());
 			System.out.println(output1.getState());
 		
-			if(out.getState() == InputHandler.BORROW && out.getOutput() != null) {
-				output1 = output.borrow("Kevin@carleton.ca,9781442616889,1");
+			if(out.getState() == InputHandler.PAYFINE && out.getOutput() != null) {
+				output1 = output.payFine("Zhibo@carleton.ca");
 			}else{
 				fail("You did not select to create a user");
 			}
-			assertEquals("ISBN Invalid!", output1.getOutput());
+			assertEquals("Borrowing Items Exist!", output1.getOutput());
 		}
 	}
-
 }
