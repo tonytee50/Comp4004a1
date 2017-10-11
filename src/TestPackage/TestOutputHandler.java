@@ -152,7 +152,7 @@ public class TestOutputHandler {
 	
 	@Test
 	public void testClerkLogin() {
-		Output out = new Output("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.", 2);
+		Output out = new Output("What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item, Borrow,Renew,Return,Pay Fine.", 2);
 		assertEquals(out.toString(), outputHand.clerkLogin("admin").toString());
 		
 		Output out1 = new Output("Wrong Password!Please Input The Password:", 14);
