@@ -5747,4 +5747,28 @@
 @2017-10-09 18:35:32 INFO  String:112 - Operation:Pay Fine;Fee Info:[0,0];State:Fail;Reason:Borrowing Items Exist.
 @2017-10-09 18:35:32 INFO  String:117 - Operation:Pay Fine;Fee Info:[5,0];State:Success
 @2017-10-09 18:35:32 INFO  String:117 - Operation:Pay Fine;Fee Info:[1,3];State:Success
+@2017-10-09 18:42:53 INFO  String:24 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context], [1234567890123,The new Title]]
+@2017-10-09 18:42:53 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:42:53,0]]
+@2017-10-09 18:42:53 INFO  String:23 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1], [4,1234567890123,1]]
+@2017-10-09 18:42:53 INFO  String:94 - Operation:Delete Title;Title Info:[9781317594277,The act in context];State:Success
+@2017-10-09 18:43:34 INFO  String:24 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context], [1234567890123,The new Title]]
+@2017-10-09 18:43:34 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:43:34,0]]
+@2017-10-09 18:43:34 INFO  String:23 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1], [4,1234567890123,1]]
+@2017-10-09 18:43:34 INFO  String:94 - Operation:Delete Title;Title Info:[9781317594277,The act in context];State:Success
+@2017-10-09 18:43:34 INFO  String:97 - Operation:Delete Title;ISBN Info:[9781442668584];State:Fail;Reason:Active Loan Exists.
+@2017-10-09 18:43:50 INFO  String:24 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context], [1234567890123,The new Title]]
+@2017-10-09 18:43:50 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:43:50,0]]
+@2017-10-09 18:43:50 INFO  String:23 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1], [4,1234567890123,1]]
+@2017-10-09 18:43:50 INFO  String:94 - Operation:Delete Title;Title Info:[9781317594277,The act in context];State:Success
+@2017-10-09 18:43:50 INFO  String:97 - Operation:Delete Title;ISBN Info:[9781442668584];State:Fail;Reason:Active Loan Exists.
+@2017-10-09 18:44:50 INFO  String:24 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context], [1234567890123,The new Title]]
+@2017-10-09 18:44:50 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:44:50,0]]
+@2017-10-09 18:44:50 INFO  String:23 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1], [4,1234567890123,1]]
+@2017-10-09 18:44:50 INFO  String:94 - Operation:Delete Title;Title Info:[9781317594277,The act in context];State:Success
+@2017-10-09 18:44:50 INFO  String:97 - Operation:Delete Title;ISBN Info:[9781442668584];State:Fail;Reason:Active Loan Exists.
+@2017-10-09 18:45:26 INFO  String:24 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context], [1234567890123,The new Title]]
+@2017-10-09 18:45:26 INFO  String:29 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-09 06:45:26,0]]
+@2017-10-09 18:45:26 INFO  String:23 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1], [4,1234567890123,1]]
+@2017-10-09 18:45:26 INFO  String:94 - Operation:Delete Title;Title Info:[9781317594277,The act in context];State:Success
+@2017-10-09 18:45:26 INFO  String:97 - Operation:Delete Title;ISBN Info:[9781442668584];State:Fail;Reason:Active Loan Exists.
 @
