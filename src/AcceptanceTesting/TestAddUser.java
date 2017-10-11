@@ -10,7 +10,6 @@ import server.logic.handler.InputHandler;
 import server.logic.handler.OutputHandler;
 import server.logic.handler.model.Output;
 import server.logic.handler.model.ServerOutput;
-import server.logic.model.User;
 import utilities.Config;
 
 public class TestAddUser {
